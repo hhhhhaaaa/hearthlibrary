@@ -1,64 +1,9 @@
 {
   "decisions": {
-    "1751|react-scripts>@pmmmwh/react-refresh-webpack-plugin>webpack-dev-server>chokidar>glob-parent": {
-      "decision": "fix",
-      "madeAt": 1623783288634
-    },
-    "1754|react-scripts>@pmmmwh/react-refresh-webpack-plugin>webpack-dev-server>chokidar>glob-parent>@svgr/webpack>@svgr/plugin-svgo>svgo>css-select>css-what": {
-      "decision": "fix",
-      "madeAt": 1623783292680
-    },
-    "1755|react-scripts>@pmmmwh/react-refresh-webpack-plugin>webpack-dev-server>chokidar>glob-parent>@svgr/webpack>@svgr/plugin-svgo>svgo>css-select>css-what>mini-css-extract-plugin>normalize-url": {
-      "decision": "fix",
-      "madeAt": 1623783295419
-    },
-    "1747|react-scripts>@pmmmwh/react-refresh-webpack-plugin>webpack-dev-server>chokidar>glob-parent>@svgr/webpack>@svgr/plugin-svgo>svgo>css-select>css-what>mini-css-extract-plugin>normalize-url>react-dev-utils>browserslist": {
-      "decision": "fix",
-      "madeAt": 1623783296146
-    },
-    "1693|react-scripts>@pmmmwh/react-refresh-webpack-plugin>webpack-dev-server>chokidar>glob-parent>@svgr/webpack>@svgr/plugin-svgo>svgo>css-select>css-what>mini-css-extract-plugin>normalize-url>react-dev-utils>browserslist>resolve-url-loader>postcss": {
-      "decision": "fix",
-      "madeAt": 1623783298844
-    },
-    "786|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces": {
-      "decision": "fix",
-      "madeAt": 1623783394073
-    },
-    "1751|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent": {
-      "decision": "fix",
-      "madeAt": 1623783394900
-    },
-    "1755|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url": {
-      "decision": "fix",
-      "madeAt": 1623783395491
-    },
-    "788|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml": {
-      "decision": "fix",
-      "madeAt": 1623783396083
-    },
-    "813|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml": {
-      "decision": "fix",
-      "madeAt": 1623783396605
-    },
-    "1084|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml>file-loader>webpack>yargs>os-locale>mem": {
-      "decision": "fix",
-      "madeAt": 1623783397073
-    },
-    "1500|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml>file-loader>webpack>yargs>os-locale>mem>yargs-parser": {
-      "decision": "fix",
-      "madeAt": 1623783397578
-    },
-    "1666|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml>file-loader>webpack>yargs>os-locale>mem>yargs-parser>jest>jest-cli>jest-haste-map>sane>anymatch>exec-sh>merge": {
-      "decision": "fix",
-      "madeAt": 1623783398089
-    },
-    "1753|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml>file-loader>webpack>yargs>os-locale>mem>yargs-parser>jest>jest-cli>jest-haste-map>sane>anymatch>exec-sh>merge>jest-jasmine2>jest-matchers>jest-message-util>jest-snapshot>jest-util>sw-precache-webpack-plugin>sw-precache>meow>trim-newlines": {
-      "decision": "fix",
-      "madeAt": 1623783398571
-    },
-    "725|react-scripts>babel-jest>babel-plugin-istanbul>test-exclude>micromatch>braces>parse-glob>glob-base>glob-parent>css-loader>cssnano>postcss-normalize-url>normalize-url>postcss-svgo>svgo>js-yaml>file-loader>webpack>yargs>os-locale>mem>yargs-parser>jest>jest-cli>jest-haste-map>sane>anymatch>exec-sh>merge>jest-jasmine2>jest-matchers>jest-message-util>jest-snapshot>jest-util>sw-precache-webpack-plugin>sw-precache>meow>trim-newlines>webpack-dev-server": {
-      "decision": "fix",
-      "madeAt": 1623783399065
+    "1751|webpack-dev-server>chokidar>glob-parent": {
+      "decision": "ignore",
+      "madeAt": 1623784792757,
+      "expiresAt": 1626376787325
     }
   },
   "rules": {},
