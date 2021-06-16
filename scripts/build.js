@@ -65,13 +65,6 @@ function build(previousFileSizes) {
           throw `Message Error${error}`;
         });
       }
-      if (messages.warnings.length) {
-        console.log("Compiled with warnings.");
-        messages.warnings.forEach((warn) => {
-          console.log(warn);
-          throw `Message Warn${warn}`;
-        });
-      }
       if (
         process.env.CI &&
         (typeof process.env.CI !== "string" ||
@@ -121,7 +114,7 @@ measureFileSizesBeforeBuild(paths.appBuild)
     ({ stats, previousFileSizes, warnings }) => {
       if (warnings.length) {
         console.log(chalk.yellow("Compiled with warnings.\n"));
-        console.log(warnings.join("\n\n"));
+        console.log(warnings);
         console.log(`\nSearch for the ${chalk.underline(chalk.yellow("keywords"))} to learn more about each warning.`);
         console.log(`To ignore, add ${chalk.cyan("// eslint-disable-next-line")} to the line before.\n`);
       } else {
