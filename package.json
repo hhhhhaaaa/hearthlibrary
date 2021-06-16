@@ -1,4 +1,5 @@
 {
+  "homepage": "https://hearth-library.herokuapp.com/",
   "name": "hearth",
   "version": "0.1.0",
   "private": true,
@@ -35,6 +36,7 @@
     "promise": "8.1.0",
     "raf": "3.4.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
     "resolve": "1.20.0",
