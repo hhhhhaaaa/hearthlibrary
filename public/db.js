@@ -1,35 +1,40 @@
+/* eslint-disable init-declarations */
+/* eslint-disable func-names */
 let db;
 let hearthVersion;
 
 // Create a new db request for a "budget" database.
 const request = indexedDB.open("HearthDB", hearthVersion || 2);
 
-request.onupgradeneeded = function (e) {
+request.onupgradeneeded = function (event) {
   console.log("Upgrade needed in IndexDB");
 
-  const { oldVersion } = e;
-  const newVersion = e.newVersion || db.version;
+  const { oldVersion } = event;
+  const newVersion = event.newVersion || db.version;
 
   console.log(`DB Updated from version ${oldVersion} to ${newVersion}`);
 
-  db = e.target.result;
+  db = event.target.result;
 
   if (db.objectStoreNames.length === 0) {
     db.createObjectStore("HearthStore", { autoIncrement: true });
   }
 };
 
-request.onerror = function (e) {
-  console.log(`There is an error: ${e.target.errorCode}`);
+request.onerror = function (error) {
+  console.log(`There is an error: ${error.target.errorCode}`);
 };
 
+/**
+ *
+ */
 function checkDatabase() {
   console.log("check db invoked");
 
   // Open a transaction on your HearthStore db
   let transaction = db.transaction(["HearthStore"], "readwrite");
 
-  // access your HearthStore object
+  // Access your HearthStore object
   const store = transaction.objectStore("HearthStore");
 
   // Get all records from store and set to a variable
@@ -44,8 +49,8 @@ function checkDatabase() {
         body: JSON.stringify(getAll.result),
         headers: {
           Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       })
         .then((response) => response.json())
         .then((res) => {
@@ -66,9 +71,9 @@ function checkDatabase() {
   };
 }
 
-request.onsuccess = function (e) {
+request.onsuccess = function (event) {
   console.log("success");
-  db = e.target.result;
+  db = event.target.result;
 
   // Check if app is online before reading from db
   if (navigator.onLine) {
@@ -77,6 +82,7 @@ request.onsuccess = function (e) {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
 const saveRecord = (record) => {
   console.log("Save record invoked");
   // Create a transaction on the HearthStore db with readwrite access

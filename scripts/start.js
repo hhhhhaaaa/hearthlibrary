@@ -1,14 +1,13 @@
-"use strict";
-
+/* eslint-disable global-require */
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "development";
 process.env.NODE_ENV = "development";
 
-// Makes the script crash on unhandled rejections instead of silently
-// ignoring them. In the future, promise rejections that are not handled will
-// terminate the Node.js process with a non-zero exit code.
+/* Makes the script crash on unhandled rejections instead of silently
+   ignoring them. In the future, promise rejections that are not handled will
+   terminate the Node.js process with a non-zero exit code. */
 process.on("unhandledRejection", (err) => {
-  throw err;
+  throw `Unhandled Rejection${err}`;
 });
 
 // Ensure environment variables are read.
@@ -24,7 +23,7 @@ const {
   choosePort,
   createCompiler,
   prepareProxy,
-  prepareUrls,
+  prepareUrls
 } = require("react-dev-utils/WebpackDevServerUtils");
 const openBrowser = require("react-dev-utils/openBrowser");
 const paths = require("../config/paths");
@@ -35,8 +34,11 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
-  process.exit(1);
+if (!checkRequiredFiles([
+paths.appHtml,
+paths.appIndexJs
+])) {
+  throw "Required Files Not Available";
 }
 
 // Tools like Cloud9 rely on this.
@@ -44,35 +46,33 @@ const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 
 if (process.env.HOST) {
-  console.log(
-    chalk.cyan(
-      `Attempting to bind to HOST environment variable: ${chalk.yellow(
-        chalk.bold(process.env.HOST)
-      )}`
-    )
-  );
-  console.log(
-    `If this was unintentional, check that you haven't mistakenly set it in your shell.`
-  );
+  console.log(chalk.cyan(`Attempting to bind to HOST environment variable: ${chalk.yellow(chalk.bold(process.env.HOST))}`));
+  console.log(`If this was unintentional, check that you haven't mistakenly set it in your shell.`);
   console.log(`Learn more here: ${chalk.yellow("http://bit.ly/2mwWSwH")}`);
   console.log();
 }
 
-// We attempt to use the default port but if it is busy, we offer the user to
-// run on a different port. `choosePort()` Promise resolves to the next free port.
+/* We attempt to use the default port but if it is busy, we offer the user to
+   run on a different port. `choosePort()` Promise resolves to the next free port. */
 choosePort(HOST, DEFAULT_PORT)
   .then((port) => {
-    if (port == null) {
+    if (port === null) {
       // We have not found a port.
-      return;
+      throw "No Port Found";
     }
-    const protocol = process.env.HTTPS === "true" ? "https" : "http";
+    const protocol = process.env.HTTPS === "true"
+? "https"
+: "http";
     const appName = require(paths.appPackageJson).name;
     const urls = prepareUrls(protocol, HOST, port);
     // Create a webpack compiler that is configured with custom messages.
-    console.log("Create Compiler");
-    const compiler = createCompiler(webpack, config, appName, urls, useYarn);
-    console.log("Created Compiler");
+    const compiler = createCompiler({
+      webpack,
+      config,
+      appName,
+      urls,
+      useYarn
+    });
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
     const proxyConfig = prepareProxy(proxySetting, paths.appPublic);
@@ -83,9 +83,10 @@ choosePort(HOST, DEFAULT_PORT)
     );
     const devServer = new WebpackDevServer(compiler, serverConfig);
     // Launch WebpackDevServer.
+
     devServer.listen(port, HOST, (err) => {
       if (err) {
-        return console.log(err);
+        throw `devServerError${err}`;
       }
       if (isInteractive) {
         clearConsole();
@@ -93,11 +94,13 @@ choosePort(HOST, DEFAULT_PORT)
       console.log(chalk.cyan("Starting the development server...\n"));
       openBrowser(urls.localUrlForBrowser);
     });
-
-    ["SIGINT", "SIGTERM"].forEach(function (sig) {
-      process.on(sig, function () {
+    [
+"SIGINT",
+"SIGTERM"
+].forEach((sig) => {
+      process.on(sig, () => {
         devServer.close();
-        process.exit();
+        throw "Closing Dev Server";
       });
     });
   })
@@ -105,5 +108,5 @@ choosePort(HOST, DEFAULT_PORT)
     if (err && err.message) {
       console.log(err.message);
     }
-    process.exit(1);
+    throw `Port Error${err}`;
   });
