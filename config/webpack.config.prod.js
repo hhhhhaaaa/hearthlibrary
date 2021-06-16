@@ -264,7 +264,10 @@ jsTest,
 
     /* Minify the code.
        Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`. */
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      chunkFilename: "index.css",
+      filename: "index.css"
+    }),
 
     /* Generate a manifest file which contains a mapping of all asset filenames
        to their corresponding output file so that tools can pick it up without
