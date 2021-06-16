@@ -28,6 +28,7 @@
     "jest": "^27.0.4",
     "meow": "^10.0.1",
     "object-assign": "4.1.1",
+    "postcss": "^8.3.4",
     "postcss-flexbugs-fixes": "5.0.2",
     "promise": "8.1.0",
     "raf": "3.4.1",
