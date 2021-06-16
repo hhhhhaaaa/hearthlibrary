@@ -183,7 +183,7 @@ module.exports = {
           {
             test: /\.css$/u,
             use: [
-              require.resolve("style-loader"),
+              "style-loader",
               {
                 loader: "css-loader",
                 options: {
