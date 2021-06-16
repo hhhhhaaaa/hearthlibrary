@@ -10,25 +10,23 @@
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "^27.0.2",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^3.1.2",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "css-loader": "^5.2.6",
-    "dotenv": "4.0.0",
+    "dotenv": "^4.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
-    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^1.1.11",
     "fs-extra": "3.0.1",
-    "html-webpack-plugin": "2.29.0",
+    "html-webpack-plugin": "^4.4.0",
     "jest": "^27.0.4",
     "meow": "^10.0.1",
     "object-assign": "4.1.1",
@@ -37,7 +35,7 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react": "^17.0.2",
-    "react-dev-utils": "^5.0.2",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
@@ -45,8 +43,9 @@
     "web-vitals": "^1.1.2",
     "webpack": "^5.39.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-manifest-plugin": "1.3.2",
-    "whatwg-fetch": "2.0.3"
+    "webpack-manifest-plugin": "^3.1.1",
+    "whatwg-fetch": "2.0.3",
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -69,7 +68,9 @@
     ]
   },
   "devDependencies": {
-    "mongoose": "^5.12.14"
+    "mini-css-extract-plugin": "^1.6.0",
+    "mongoose": "^5.12.14",
+    "terser-webpack-plugin": "^5.1.3"
   },
   "jest": {
     "collectCoverageFrom": [

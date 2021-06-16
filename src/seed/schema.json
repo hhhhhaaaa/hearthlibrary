@@ -3,8 +3,8 @@
     "beforeyoubegin": "string",
     "time":"string",
     "yields":"string",
-    "Ingredients":"string",
-    "Steps":"string",
-    "Notes/Pictures/History":"string",
-    "Sources":"string"
+    "ingredients":"string",
+    "steps":"string",
+    "notes":"string",
+    "sources":"string"
 }
