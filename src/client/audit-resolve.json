@@ -1,0 +1,11 @@
+{
+  "decisions": {
+    "1751|webpack-dev-server>chokidar>glob-parent": {
+      "decision": "ignore",
+      "madeAt": 1623784792757,
+      "expiresAt": 1626376787325
+    }
+  },
+  "rules": {},
+  "version": 1
+}
