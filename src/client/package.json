@@ -17,6 +17,7 @@
     "bootstrap": "^5.0.1",
     "case-sensitive-paths-webpack-plugin": "2.4.0",
     "chalk": "4.1.1",
+    "css-loader": "^5.2.6",
     "dotenv": "^10.0.0",
     "eslint": "7.28.0",
     "eslint-config-react-app": "^6.0.0",
@@ -34,6 +35,7 @@
     "object-assign": "4.1.1",
     "postcss": "^8.3.4",
     "postcss-flexbugs-fixes": "5.0.2",
+    "postcss-loader": "^6.1.0",
     "promise": "8.1.0",
     "raf": "3.4.1",
     "react": "^17.0.2",
@@ -72,13 +74,11 @@
     ]
   },
   "devDependencies": {
-    "css-loader": "^5.2.6",
     "dotenv-expand": "^5.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsdoc": "^35.2.0",
     "jsdoc": "^3.6.7",
     "mongoose": "^5.12.14",
-    "postcss-loader": "^6.1.0",
     "prettier": "^2.3.1",
     "terser-webpack-plugin": "^5.1.3"
   },
