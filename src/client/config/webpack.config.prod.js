@@ -159,7 +159,8 @@ paths.appIndexJs
 /\.bmp$/u,
 /\.gif$/u,
 /\.jpe?g$/u,
-/\.png$/u
+/\.png$/u,
+/\.svg$/u
 ],
             loader: "url-loader",
             options: {
