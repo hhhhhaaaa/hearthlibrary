@@ -23,7 +23,7 @@ const {
   choosePort,
   createCompiler,
   prepareProxy,
-  prepareUrls
+  prepareUrls,
 } = require("react-dev-utils/WebpackDevServerUtils");
 const openBrowser = require("react-dev-utils/openBrowser");
 const paths = require("../config/paths");
@@ -34,20 +34,25 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([
-paths.appHtml,
-paths.appIndexJs
-])) {
+if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   throw "Required Files Not Available";
 }
 
 // Tools like Cloud9 rely on this.
-const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3001;
+const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 
 if (process.env.HOST) {
-  console.log(chalk.cyan(`Attempting to bind to HOST environment variable: ${chalk.yellow(chalk.bold(process.env.HOST))}`));
-  console.log(`If this was unintentional, check that you haven't mistakenly set it in your shell.`);
+  console.log(
+    chalk.cyan(
+      `Attempting to bind to HOST environment variable: ${chalk.yellow(
+        chalk.bold(process.env.HOST)
+      )}`
+    )
+  );
+  console.log(
+    `If this was unintentional, check that you haven't mistakenly set it in your shell.`
+  );
   console.log(`Learn more here: ${chalk.yellow("http://bit.ly/2mwWSwH")}`);
   console.log();
 }
@@ -60,9 +65,7 @@ choosePort(HOST, DEFAULT_PORT)
       // We have not found a port.
       throw "No Port Found";
     }
-    const protocol = process.env.HTTPS === "true"
-? "https"
-: "http";
+    const protocol = process.env.HTTPS === "true" ? "https" : "http";
     const appName = require(paths.appPackageJson).name;
     const urls = prepareUrls(protocol, HOST, port);
     // Create a webpack compiler that is configured with custom messages.
@@ -71,7 +74,7 @@ choosePort(HOST, DEFAULT_PORT)
       config,
       appName,
       urls,
-      useYarn
+      useYarn,
     });
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
@@ -94,10 +97,7 @@ choosePort(HOST, DEFAULT_PORT)
       console.log(chalk.cyan("Starting the development server...\n"));
       openBrowser(urls.localUrlForBrowser);
     });
-    [
-"SIGINT",
-"SIGTERM"
-].forEach((sig) => {
+    ["SIGINT", "SIGTERM"].forEach((sig) => {
       process.on(sig, () => {
         devServer.close();
         throw "Closing Dev Server";
