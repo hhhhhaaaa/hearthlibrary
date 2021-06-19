@@ -1,30 +1,47 @@
-import logo from "./logo.svg";
-import "./App.css";
-// eslint-disable-next-line no-unused-vars
 import React from "react";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import Recipes from "./pages/Recipes";
+import Login from "./pages/Login";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
 
-/**
- *
- */
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ export default function App() {
+     return (
+         <Router>
+             <div>
+                 <Navbar />
 
-export default App;
+                <Switch>
+                    <Route path="/categories">
+                        <Categories />
+                    </Route>
+                    {/* <Route path="/popularitems">
+                        <Popularitems />
+                    </Route> */}
+                    <Route path="/recipes">
+                        <Recipes />
+                    </Route>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+             </div>
+         </Router>
+     );
+ }
+
+

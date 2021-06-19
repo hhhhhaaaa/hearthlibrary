@@ -41,7 +41,8 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "jsdoc": "^3.6.7",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "react-router-dom": "^5.2.0"
   },
   "jest": {
     "collectCoverageFrom": [
