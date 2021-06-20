@@ -23,9 +23,6 @@ import Navbar from "./components/Navbar";
                     <Route path="/categories">
                         <Categories />
                     </Route>
-                    {/* <Route path="/popularitems">
-                        <Popularitems />
-                    </Route> */}
                     <Route path="/recipes">
                         <Recipes />
                     </Route>

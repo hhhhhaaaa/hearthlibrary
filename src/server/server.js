@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const path = require("path");
 
 require('dotenv').config();
 
@@ -11,6 +12,7 @@ require('dotenv').config();
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname,)))
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -18,12 +20,15 @@ if (process.env.NODE_ENV === "production") {
 const root = require('path').join(__dirname, '..', 'client', 'config', 'dist');
 
 app.use(express.static(root));
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile('index.html', { root });
 });
 }
 // Add routes, both API and view
 app.use(routes);
+// app.get("/src/pages/Home.js", function (req, res) {
+//   res.send("Home")
+// })
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hearth", {
