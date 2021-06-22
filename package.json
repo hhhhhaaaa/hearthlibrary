@@ -9,7 +9,7 @@
     "start": " set NODE_ENV=production && node src/server/server.js",
     "start:dev": "set NODE_ENV=development && concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
     "client": "cd src/client && npm run start",
-    "seed": "node src/seed/scripts/seedDB.js",
+    "seed": "cd src/seed/recipes && ls -1 *.json | while read jsonfile; do mongoimport -d hearthdb -c hearth --file $jsonfile --type json; done",
     "install": "cd src/client && npm install",
     "build": "cd src/client && npm run build",
     "heroku-postbuild": "npm run build"
