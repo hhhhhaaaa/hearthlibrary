@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": " set NODE_ENV=production && node src/server/server.js",
-    "start:dev": "set  NODE_ENV=development && concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
+    "start:dev": "set NODE_ENV=development && concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
     "client": "cd src/client && npm run start",
     "seed": "node src/seed/scripts/seedDB.js",
     "install": "cd src/client && npm install",
