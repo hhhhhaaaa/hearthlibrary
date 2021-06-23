@@ -1,5 +1,8 @@
-import React from "react"
+import React from "react";
 
+/**
+ *
+ */
 export default function Categories() {
-    return <h2>Categories</h2>
-  }
+  return <h2>Categories</h2>;
+}
