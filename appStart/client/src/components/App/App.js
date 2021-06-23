@@ -7,12 +7,12 @@ import {
   Route,
 } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import Home from "./pages/Home";
-import Categories from "./pages/Categories";
-import Recipes from "./pages/Recipes";
-import Login from "./pages/Login";
-import About from "./pages/About";
-import Navbar from "./components/Navbar";
+import Home from "../../pages/Home";
+import Categories from "../../pages/Categories";
+import Recipes from "../../pages/Recipes";
+import Login from "../../pages/Login";
+import About from "../../pages/About";
+import Navbar from "../Navbar";
 
  export default function App() {
      return (
