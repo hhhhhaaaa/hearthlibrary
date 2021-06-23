@@ -6,8 +6,8 @@
   "main": "src/server/server.js",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node src/server/server.js",
-    "start:dev": "NODE_ENV=development concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
+    "start": " set NODE_ENV=production && node src/server/server.js",
+    "start:dev": "set  NODE_ENV=development && concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
     "client": "cd src/client && npm run start",
     "seed": "node src/seed/scripts/seedDB.js",
     "install": "cd src/client && npm install",
@@ -41,6 +41,7 @@
     "express": "^4.17.1",
     "jsdoc": "^3.6.7",
     "mongoose": "^5.12.14",
+    "react-router-dom": "^5.2.0",
     "win-node-env": "^0.4.0"
   },
   "jest": {
