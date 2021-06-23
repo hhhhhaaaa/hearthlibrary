@@ -23,7 +23,7 @@ const {
   choosePort,
   createCompiler,
   prepareProxy,
-  prepareUrls,
+  prepareUrls
 } = require("react-dev-utils/WebpackDevServerUtils");
 const openBrowser = require("react-dev-utils/openBrowser");
 const paths = require("../config/paths");
@@ -39,7 +39,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 }
 
 // Tools like Cloud9 rely on this.
-const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
+const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3001;
 const HOST = process.env.HOST || "0.0.0.0";
 
 if (process.env.HOST) {
@@ -74,7 +74,7 @@ choosePort(HOST, DEFAULT_PORT)
       config,
       appName,
       urls,
-      useYarn,
+      useYarn
     });
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
