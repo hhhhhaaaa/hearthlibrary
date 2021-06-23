@@ -1,5 +1,8 @@
-import React from "react"
+import React from "react";
 
+/**
+ *
+ */
 export default function Recipes() {
-    return <h2>Recipes</h2>
-  }
+  return <h2>Recipes</h2>;
+}

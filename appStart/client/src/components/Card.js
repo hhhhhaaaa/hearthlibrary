@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * @param props
+ */
 function Card(props) {
   return (
     <div className="card text-center">
