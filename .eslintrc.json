@@ -5,7 +5,7 @@
     "jest": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": ["eslint:recommended", "prettier", "@imaginary-cloud/react"],
   "root": true,
   "parserOptions": {
     "ecmaFeatures": {

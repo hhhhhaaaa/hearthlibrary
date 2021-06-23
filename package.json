@@ -3,15 +3,15 @@
   "name": "hearth",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server/server.js",
+  "main": "appStart/server/server.js",
   "private": true,
   "scripts": {
-    "start": " set NODE_ENV=production && node src/server/server.js",
-    "start:dev": "set NODE_ENV=development && concurrently \"nodemon --ignore 'src/client/*'\" \"npm run client\"",
-    "client": "cd src/client && npm run start",
-    "seed": "cd src/seed/recipes && ls -1 *.json | while read jsonfile; do mongoimport -d hearthdb -c hearth --file $jsonfile --type json; done",
-    "install": "cd src/client && npm install",
-    "build": "cd src/client && npm run build",
+    "start": " set NODE_ENV=production && node appStart/server/server.js",
+    "start:dev": "set NODE_ENV=development && concurrently \"nodemon --ignore 'appStart/client/*'\" \"npm run client\"",
+    "client": "cd appStart/client && npm run start",
+    "seed": "cd appStart/seed/recipes && ls -1 *.json | while read jsonfile; do mongoimport -d hearthdb -c hearth --file $jsonfile --type json; done",
+    "install": "cd appStart/client && npm install",
+    "build": "cd appStart/client && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
