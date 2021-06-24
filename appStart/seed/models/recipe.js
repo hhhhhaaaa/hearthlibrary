@@ -7,6 +7,11 @@ const RecipeSchema = new Schema({
     trim: true,
     required: "Enter the Title of the Recipe"
   },
+  description: {
+    type: String,
+    trim: true,
+    required: "Enter the Description of the Recipe"
+  },
   beforeyoubegin: {
     type: String,
     trim: true
@@ -38,6 +43,15 @@ const RecipeSchema = new Schema({
     type: String,
     trim: true,
     required: "Enter Where the Recipe is From and or the Creator(s)"
+  },
+  category: {
+    type: String,
+    trim: true,
+    required: "Enter the Category of the Recipe"
+  },
+  tags: {
+    type: String,
+    trim: true
   }
 });
 

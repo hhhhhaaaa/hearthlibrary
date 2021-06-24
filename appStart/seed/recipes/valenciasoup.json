@@ -1,10 +1,12 @@
 {
-    "title": "Valencia Soup",
-    "beforeyoubegin": "16 Qt Pot",
-    "time":"Roughly 4 hours.",
-    "yields":"8 qts of soopage.",
-    "Ingredients":"For Meatballs:\\n1 lb Ground Pork\\n2 lb 90% Lean Ground Beef\\n1 lb Ground Veal\\n1 tsp Onion Soup Mix\\n3-5 Medium Onions\\n2-4 Jumbo Eggs\\n2 tbsp Brown Sugar\\n2 tbsp Worcestershire Sauce\\n½ Cup Beef Broth\\n½ Cup Panko\\n2 tbsp Olive Oil\\n2 tbsp Butter\\n\\nFor Broth:\\n2 Packages Onion Soup Mix\\n12 Long Carrots, Sliced\\n12 Potatoes, Diced\\n7 Cans of Tomato Soup, Spliced\\n1 pint of Sour Cream, ...Iced?\\n3 Cans of Peas, Drained\\n4 qts of Water",
-    "Steps":"Meatballs\\nMix all Meatball ingredients except for the butter and olive oil.\\nShape meatballs to size you like.\\nBrown in olive oil and butter.\\nBroth\\nPut carrots and potatoes in water.\\nAdd leftover onion soup mix from Meatballs and Broth onion soup mix.\\nCook until potatoes and carrots are tender (Estimation: 30 minutes)\\nAdd meatballs, and rest of Broth ingredients.",
-    "Notes/Pictures/History":"If you mix some of the broth into the sour cream before you add it to the soup, it’s less lumpy.",
-    "Sources":"Peter Lubaway\\nCelia Mylis"
+  "title": "Valencia Soup",
+  "description": "Tomato and meatball soup.",
+  "beforeyoubegin": "16 Qt Pot",
+  "time": "Roughly 4 hours.",
+  "yields": "8 qts of soopage.",
+  "Ingredients": "For Meatballs:\\n1 lb Ground Pork\\n2 lb 90% Lean Ground Beef\\n1 lb Ground Veal\\n1 tsp Onion Soup Mix\\n3-5 Medium Onions\\n2-4 Jumbo Eggs\\n2 tbsp Brown Sugar\\n2 tbsp Worcestershire Sauce\\n½ Cup Beef Broth\\n½ Cup Panko\\n2 tbsp Olive Oil\\n2 tbsp Butter\\n\\nFor Broth:\\n2 Packages Onion Soup Mix\\n12 Long Carrots, Sliced\\n12 Potatoes, Diced\\n7 Cans of Tomato Soup, Spliced\\n1 pint of Sour Cream, ...Iced?\\n3 Cans of Peas, Drained\\n4 qts of Water",
+  "Steps": "Meatballs\\nMix all Meatball ingredients except for the butter and olive oil.\\nShape meatballs to size you like.\\nBrown in olive oil and butter.\\nBroth\\nPut carrots and potatoes in water.\\nAdd leftover onion soup mix from Meatballs and Broth onion soup mix.\\nCook until potatoes and carrots are tender (Estimation: 30 minutes)\\nAdd meatballs, and rest of Broth ingredients.",
+  "Notes/Pictures/History": "If you mix some of the broth into the sour cream before you add it to the soup, it’s less lumpy.",
+  "Sources": "Peter Lubaway\\nCelia Mylis",
+  "categories": "Soup"
 }
