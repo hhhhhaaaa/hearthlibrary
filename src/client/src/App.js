@@ -13,6 +13,9 @@ import Recipes from "./pages/Recipes";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Preferences from "./components/Preferences/Preferences";
+
 
  export default function App() {
      return (
@@ -32,6 +35,12 @@ import Navbar from "./components/Navbar";
                     </Route>
                     <Route path="/about">
                         <About />
+                    </Route>
+                    <Route path="/dashboard">
+                        <Dashboard />
+                    </Route>
+                    <Route path="/preferences">
+                        <Preferences />
                     </Route>
                     <Route path="/">
                         <Home />
