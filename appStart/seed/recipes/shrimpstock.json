@@ -1,10 +1,12 @@
 {
-    "title": "Shrimp Stock",
-    "beforeyoubegin": "8 Qt Pot\\nNo oven necessary!",
-    "time":"Roughly 2 hours.",
-    "yields":"2 qts of soupage.",
-    "Ingredients":"2 Long Carrots\\n2 Medium Onions\\n2 Ribs of Celery\\n1 Bag Of Lipton Onion Soup Mix\\n1 Bay Leaf\\n½ Tsp of Creole Seasoning\\n1 Tsp Thyme\\n1 Tsp Garlic Powder\\n1 Tsp Seafood Boil (Joshua Weissman’s Holy Boil)\\n1 Tsp Onion Powder\\n1 Tsp Rosemary\\n1 Tbsp Garlic Paste\\n2 Tsp Lobster Bouillon\\nShrimp Shells From 2 Lbs of Shrimp",
-    "Steps":"Boil 3 quarts of water.\\nPut all the ingredients into the soup.\\nSimmer stock for 1 hour.\\nStrain out ingredients.",
-    "Notes/Pictures/History":"Other half of Family Ramen Recipe",
-    "Sources":"Chriscook4u2\\nhttps://www.youtube.com/watch?v=mGf39rqqufY"
+  "title": "Shrimp Stock",
+  "description": "Basic Fish Stock; good for ramen.",
+  "beforeyoubegin": "8 Qt Pot\\nNo oven necessary!",
+  "time": "Roughly 2 hours.",
+  "yields": "2 qts of soupage.",
+  "Ingredients": "2 Long Carrots\\n2 Medium Onions\\n2 Ribs of Celery\\n1 Bag Of Lipton Onion Soup Mix\\n1 Bay Leaf\\n½ Tsp of Creole Seasoning\\n1 Tsp Thyme\\n1 Tsp Garlic Powder\\n1 Tsp Seafood Boil (Joshua Weissman’s Holy Boil)\\n1 Tsp Onion Powder\\n1 Tsp Rosemary\\n1 Tbsp Garlic Paste\\n2 Tsp Lobster Bouillon\\nShrimp Shells From 2 Lbs of Shrimp",
+  "Steps": "Boil 3 quarts of water.\\nPut all the ingredients into the soup.\\nSimmer stock for 1 hour.\\nStrain out ingredients.",
+  "Notes/Pictures/History": "Other half of Family Ramen Recipe",
+  "Sources": "Chriscook4u2\\nhttps://www.youtube.com/watch?v=mGf39rqqufY",
+  "categories": "Soup"
 }
