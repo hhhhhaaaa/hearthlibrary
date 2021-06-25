@@ -1,10 +1,12 @@
 {
-    "title": "Cherry Angel Cake",
-    "beforeyoubegin": "No oven necessary!",
-    "time":"Based on your speed.",
-    "yields":"One 9 x 12 cake",
-    "Ingredients":"1 Angel Food Cake\\nLarge Vanilla Instant Pudding\\n3     Cups of Milk\\n     Pudding Powder\\n1 12 oz. Container of Extra Creamy Cool Whip\\n1 30 oz Can of Cherry Pie Filling\\n1 21 oz Can of Cherry Pie Filling",
-    "Steps":"Prepare Instant Pudding according to the recipe.\\nTear up the Angel Food Cake.\\nAdd 1 ½ Cups of Cool Whip and the Instant Pudding with the shredded Angel Food Cake.\\nSpread in a 9x13 pan.\\nCover with remaining cool whip.\\nSeparate cherries from filling.\\nPlace cherries on top.\\nRefrigerate.",
-    "Notes/Pictures/History":"If you like cherries at all, it’s a favorite for George Washington’s B-day. Fuuuuull o Cherries.\\n\\nWhile we may have an Angel Food Cake recipe floating around here, making one defies the original intentions of this recipe. You just buy the ingredients and mix!",
-    "Sources":"Dee Karl\\nPudding Base\\nhttps://www.amazon.com/dp/B000E1DSG8/ref=twister_B07TLVD8RX?_encoding=UTF8&psc=1"
+  "title": "Cherry Angel Cake",
+  "beforeyoubegin": "No oven necessary!",
+  "description": "A no-bake cake that is quite easy to make.",
+  "time": "Based on your speed.",
+  "yields": "One 9 x 12 cake",
+  "Ingredients": "1 Angel Food Cake\\nLarge Vanilla Instant Pudding\\n3     Cups of Milk\\n     Pudding Powder\\n1 12 oz. Container of Extra Creamy Cool Whip\\n1 30 oz Can of Cherry Pie Filling\\n1 21 oz Can of Cherry Pie Filling",
+  "Steps": "Prepare Instant Pudding according to the recipe.\\nTear up the Angel Food Cake.\\nAdd 1 ½ Cups of Cool Whip and the Instant Pudding with the shredded Angel Food Cake.\\nSpread in a 9x13 pan.\\nCover with remaining cool whip.\\nSeparate cherries from filling.\\nPlace cherries on top.\\nRefrigerate.",
+  "Notes/Pictures/History": "If you like cherries at all, it’s a favorite for George Washington’s B-day. Fuuuuull o Cherries.\\n\\nWhile we may have an Angel Food Cake recipe floating around here, making one defies the original intentions of this recipe. You just buy the ingredients and mix!",
+  "Sources": "Dee Karl\\nPudding Base\\nhttps://www.amazon.com/dp/B000E1DSG8/ref=twister_B07TLVD8RX?_encoding=UTF8&psc=1",
+  "category": "Dessert"
 }
