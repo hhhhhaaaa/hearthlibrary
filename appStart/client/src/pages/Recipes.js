@@ -4,5 +4,15 @@ import React from "react";
  *
  */
 export default function Recipes() {
-  return <h2>Recipes</h2>;
+  return (
+    <div>
+      <h1> Recipes</h1>
+      <ul>
+        <li>
+        Breakfast Casserole
+        </li>
+        
+      </ul>
+    </div>
+  )
 }

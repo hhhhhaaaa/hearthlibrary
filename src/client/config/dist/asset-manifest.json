@@ -1,0 +1,14 @@
+{
+  "main.css": "/index.css",
+  "main.js": "/static/js/main.89aa76d8.js",
+  "static/js/131.89aa76d8.chunk.js": "/static/js/131.89aa76d8.chunk.js",
+  "workbox-bdcf4c9d.js.map": "/workbox-bdcf4c9d.js.map",
+  "workbox-bdcf4c9d.js": "/workbox-bdcf4c9d.js",
+  "service-worker.js.map": "/service-worker.js.map",
+  "service-worker.js": "/service-worker.js",
+  "index.html": "/index.html",
+  "static/media/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;.7b1c54da.bin": "/static/media/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;.7b1c54da.bin",
+  "index.css.map": "/index.css.map",
+  "main.89aa76d8.js.map": "/static/js/main.89aa76d8.js.map",
+  "131.89aa76d8.chunk.js.map": "/static/js/131.89aa76d8.chunk.js.map"
+}
