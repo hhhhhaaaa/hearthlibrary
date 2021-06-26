@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from "react";
+import React from "react";
+<<<<<<< Updated upstream
+=======
 import Container from "../components/Container/Container";
 import Row from "../components/Row/Row";
 import Col from "../components/Col/Col";
 import Card from "../components/Card/Card";
 import image1 from "./image/image1.jpg";
+>>>>>>> Stashed changes
 
 /**
  *
