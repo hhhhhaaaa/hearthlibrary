@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -9,14 +10,27 @@ import {
 // eslint-disable-next-line no-unused-vars
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
-import Recipes from "../../pages/Recipes";
 import Login from "../../pages/Login";
 import About from "../../pages/About";
-import Navbar from "../Navbar";
+import Recipes from "../../pages/Recipes";
+import Navbar from "../Navbar/Navbar";
+import Header from "../Header/Header";
+import recipe from "../recipes/recipe.json";
+import Footer from "../Footer/Footer";
 
- export default function App() {
+
+
+
+   function App() {
+
      return (
-         <Router>
+         
+         <div>
+         <div>
+             <Header />
+         </div>
+         
+             <Router>
              <div>
                  <Navbar />
 
@@ -25,7 +39,7 @@ import Navbar from "../Navbar";
                         <Categories />
                     </Route>
                     <Route path="/recipes">
-                        <Recipes />
+                        <Recipes recipe={recipe} />
                     </Route>
                     <Route path="/login">
                         <Login />
@@ -39,7 +53,9 @@ import Navbar from "../Navbar";
                 </Switch>
              </div>
          </Router>
+         <Footer/>
+         </div>
      );
  }
 
-
+export default App;
