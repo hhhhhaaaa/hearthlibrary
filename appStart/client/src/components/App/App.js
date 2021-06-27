@@ -11,15 +11,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Login from "./pages/Login";
 // import About from "./pages/About";
 // import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Preferences from "./components/Preferences/Preferences";
+
+// Only visible when logged in
+import Dashboard from "../Dashboard/Dashboard";
+import Preferences from "../Preferences/Preferences";
 
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Login from "../../pages/Login";
 import About from "../../pages/About";
 
-//import Navbar from "../Navbar";
+// import Navbar from "../Navbar";
 
 import Recipes from "../../pages/Recipes";
 import Navbar from "../Navbar/Navbar";
@@ -33,10 +35,10 @@ import Footer from "../Footer/Footer";
 function App() {
   const [token, setToken] = useState();
 
-  if(!token) {
+  if (!token) {
     return <Login setToken={setToken} />
   }
-  
+
   return (
     <div>
       <div>
