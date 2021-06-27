@@ -7,6 +7,9 @@ import { Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { recipeFound } from "../../features/Recipes/recipeSlice";
 import axios from "axios";
+// Only visible when logged in
+import Dashboard from "../Dashboard/Dashboard";
+import Preferences from "../Preferences/Preferences";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Category from "../../pages/Category";
@@ -27,6 +30,8 @@ import history from "../History/history";
 function App() {
   const dispatch = useDispatch();
 
+  if (!token) {
+    return <Login setToken={setToken} />
   /**
    *
    */
