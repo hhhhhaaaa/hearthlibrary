@@ -7,6 +7,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 
+.Search-form{
+  align-items: center;
+  justify-content:center;
+  padding: 150px 0px;
+  display: flex;
+  background-color: aqua;
+  
+}
