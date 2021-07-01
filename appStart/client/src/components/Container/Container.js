@@ -12,7 +12,7 @@ function Container({ fluid, children }) {
 
 Container.propTypes = {
   fluid: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.array
 };
 
 export default Container;

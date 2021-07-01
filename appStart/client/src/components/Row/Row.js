@@ -12,7 +12,7 @@ function Row({ fluid, children }) {
 
 Row.propTypes = {
   fluid: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.array
 };
 
 export default Row;

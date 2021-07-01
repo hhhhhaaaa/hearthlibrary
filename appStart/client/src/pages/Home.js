@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { Component } from "react";
 import Container from "../components/Container/Container";
 import Row from "../components/Row/Row";
 import Col from "../components/Col/Col";
@@ -26,7 +26,6 @@ export default function Home() {
                 broiled. ... A hamburger topped with cheese is called a
                 cheeseburger.
               </p>
-              <tags> tags</tags>
             </div>
           </div>
         </Col>

@@ -19,7 +19,7 @@ function Card({ popular, children }) {
 
 Card.propTypes = {
   popular: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.object
 };
 
 export default Card;
