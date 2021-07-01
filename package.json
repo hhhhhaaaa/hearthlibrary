@@ -34,17 +34,17 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.3.1"
+    "nodemon": "^2.0.8",
+    "prettier": "^2.3.2"
   },
   "dependencies": {
     "bootstrap": "^5.0.2",
     "dotenv": "^10.0.0",
-    "eslint": "^7.28.0",
-    "eslint-plugin-jsdoc": "^35.3.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-jsdoc": "^35.4.1",
     "express": "^4.17.1",
     "jsdoc": "^3.6.7",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.13.0"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -4,7 +4,7 @@ import Container from "../components/Container/Container";
 import Row from "../components/Row/Row";
 import Col from "../components/Col/Col";
 import Card from "../components/Card/Card";
-import image1 from "./image/image1.jpg";
+import image1 from "./image1.jpg";
 
 /**
  *
@@ -26,7 +26,6 @@ export default function Home() {
                 broiled. ... A hamburger topped with cheese is called a
                 cheeseburger.
               </p>
-              <tags> tags</tags>
             </div>
           </div>
         </Col>

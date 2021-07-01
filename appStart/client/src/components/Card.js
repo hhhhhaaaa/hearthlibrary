@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { PropTypes } from "prop-types";
 
 /**
  * @param props
@@ -19,7 +19,7 @@ function Card({ popular, children }) {
 
 Card.propTypes = {
   popular: PropTypes.string,
-  children: PropTypes.object
+  children: PropTypes.array
 };
 
 export default Card;

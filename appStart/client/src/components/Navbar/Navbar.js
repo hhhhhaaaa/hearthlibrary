@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 /**
  *
  */
-function Navbar() {
+const Navbar = () => {
   const location = useLocation();
 
   return (
@@ -34,7 +34,6 @@ function Navbar() {
             About
           </Link>
         </li>
-
         <li className="nav-item ">
           <Link
             to="/categories"
@@ -57,9 +56,19 @@ function Navbar() {
             Recipes
           </Link>
         </li>
+        <li className="nav-item ">
+          <Link
+            to="/search"
+            className={
+              location.pathname === "/search" ? "nav-link active" : "nav-link"
+            }
+          >
+            Search
+          </Link>
+        </li>
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

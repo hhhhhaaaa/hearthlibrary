@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const path = require("path");
 
 require("dotenv").config();
@@ -16,17 +16,16 @@ app.use(express.static(path.join(__dirname)));
 // Serve up static assets (usually on heroku)
 
 // eslint-disable-next-line global-require
-const root = require("path").join(__dirname, "../client/config/dist/");
+const root = path.join(__dirname, "../client/config/dist/");
 
 app.use(express.static(root));
-app.get("/", (req, res) => {
+app.use(routes);
+app.get("*", (req, res) => {
   res.sendFile("index.html", { root });
 });
-// Add routes, both API and view
-app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hearth", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hearthdb", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
