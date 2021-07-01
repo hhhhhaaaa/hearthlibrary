@@ -38,7 +38,7 @@ if (env.stringified["process.env"].NODE_ENV !== '"production"') {
 }
 
 // Note: defined here because it will be used more than once.
-const cssFilename = "static/css/[name].[fullhash:8].css";
+const cssFilename = "static/css/[name].css";
 
 /* ExtractTextPlugin expects the build output to be flat.
    (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
@@ -69,8 +69,8 @@ module.exports = {
     /* Generated JS file names (with nested folders).
        There will be one main bundle, and one file per asynchronous chunk.
        We don't currently advertise code splitting but Webpack supports it. */
-    filename: "static/js/[name].[fullhash:8].js",
-    chunkFilename: "static/js/[name].[fullhash:8].chunk.js",
+    filename: "static/js/[name].js",
+    chunkFilename: "static/js/[name].chunk.js",
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
@@ -147,7 +147,7 @@ module.exports = {
             test: [/\.bmp$/u, /\.gif$/u, /\.jpe?g$/u, /\.png$/u, /\.svg$/u],
             exclude: [jsTest, /\.html$/u, /\.json$/u, "/src/seed/"],
             type: "asset/resource",
-            generator: { filename: "static/media/[name].[fullhash:8].[ext]" }
+            generator: { filename: "static/media/[name].[ext]" }
           },
           // Process JS with Babel.
           {

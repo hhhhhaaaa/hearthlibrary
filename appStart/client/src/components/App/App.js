@@ -9,7 +9,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
+import axios from "axios";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Login from "../../pages/Login";
@@ -36,8 +36,22 @@ function App() {
     recipeResults = event.target.value;
   };
 
-  const handleFormSubmitChange = (event) => {
+  const handleFormSubmitChange = async (event) => {
     event.preventDefault();
+    await axios
+      .get("/api/recipe")
+      .then(({ data }) => {
+        console.log("search");
+        const match = data.find((recipe) => {
+          return (recipe.title = recipeResults);
+        });
+
+        console.log(match);
+        setResult(match);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

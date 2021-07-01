@@ -145,7 +145,7 @@ module.exports = {
             loader: "url-loader",
             options: {
               limit: 10000,
-              name: "static/media/[name].[fullhash:8].[ext]"
+              name: "static/media/[name].[ext]"
             },
             exclude: ["/src/seed/"]
           },

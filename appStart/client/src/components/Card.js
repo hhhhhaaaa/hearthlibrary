@@ -10,11 +10,7 @@ function Card({ popular, children }) {
   return (
     <div className="card text-center">
       <div className="card-header">
-<<<<<<< Updated upstream:appStart/client/src/components/Card.js
-        <h2>{props.heading}</h2>
-=======
         <h2>{popular}</h2>
->>>>>>> Stashed changes:appStart/client/src/components/Card/Card.js
       </div>
       <div className="card-body">{children}</div>
     </div>
@@ -23,7 +19,7 @@ function Card({ popular, children }) {
 
 Card.propTypes = {
   popular: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.array
 };
 
 export default Card;
