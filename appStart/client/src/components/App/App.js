@@ -3,13 +3,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
-import axios from "axios";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Login from "../../pages/Login";
@@ -20,8 +14,7 @@ import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-let recipeResults;
-const recipeResult = null;
+import history from "../History/history";
 
 /**
  *
@@ -30,83 +23,38 @@ function App() {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
 
-  const handleInputChange = (event) => {
-    setSearch(event.target.value);
-    console.log(event.target.value);
-    recipeResults = event.target.value;
-  };
-
-  const handleFormSubmitChange = async (event) => {
-    event.preventDefault();
-    await axios
-      .get("/api/recipe")
-      .then(({ data }) => {
-        console.log("search");
-        const match = data.find((recipe) => {
-          return (recipe.title = recipeResults);
-        });
-
-        console.log(match);
-        setResult(match);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <div>
-      <Router>
+      <Router history={history}>
         <div>
           <Switch>
-            {recipeResult ? (
-              <Redirect
-                to={{
-                  pathname: "/search",
-                  recipe: result
-                }}
-              />
-            ) : (
-              <Route exact path="/">
-                <div>
-                  <Header
-                    handleInputChange={handleInputChange}
-                    handleFormSubmitChange={handleFormSubmitChange}
-                  />
-                </div>
-                <Navbar />
-                <Home />
-                <Footer />
-              </Route>
-            )}
-            <Route path="/categories">
+            <Route exact path="/">
               <div>
-                <Header
-                  handleInputChange={handleInputChange}
-                  handleFormSubmitChange={handleFormSubmitChange}
-                />
+                <Header />
               </div>
               <Navbar />
-              <Categories recipe={recipeResult} />
+              <Home />
+              <Footer />
+            </Route>
+            <Route path="/categories">
+              <div>
+                <Header />;
+              </div>
+              <Navbar />
+              <Categories recipe={result} />
               <Footer />
             </Route>
             <Route path="/recipes">
               <div>
-                <Header
-                  handleFormSubmitChange={handleFormSubmitChange}
-                  handleInputChange={handleInputChange}
-                />
+                <Header />;
               </div>
               <Navbar />
-              <Recipes recipe={recipeResult} />
+              <Recipes recipe={result} />
               <Footer />
             </Route>
             <Route path="/login">
               <div>
-                <Header
-                  handleInputChange={handleInputChange}
-                  handleFormSubmitChange={handleFormSubmitChange}
-                />
+                <Header />;
               </div>
               <Navbar />
               <Login />
@@ -114,10 +62,7 @@ function App() {
             </Route>
             <Route path="/about">
               <div>
-                <Header
-                  handleInputChange={handleInputChange}
-                  handleFormSubmitChange={handleFormSubmitChange}
-                />
+                <Header />;
               </div>
               <Navbar />
               <About />
@@ -125,13 +70,10 @@ function App() {
             </Route>
             <Route path="/search">
               <div>
-                <Header
-                  handleInputChange={handleInputChange}
-                  handleFormSubmitChange={handleFormSubmitChange}
-                />
+                <Header />;
               </div>
               <Navbar />
-              <Results recipe={result} />
+              <Results />
               <Footer />
             </Route>
           </Switch>
