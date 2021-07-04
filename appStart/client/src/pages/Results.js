@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { useDispatch, useSelector } from "react-redux";
 import { recipeResultsFound } from "../features/RecipeResults/recipeResultsSlice";
-import { searchSet } from "../features/Search/searchSlice";
 
 import axios from "axios";
 
@@ -13,14 +12,14 @@ const recipeArray = [];
  *
  */
 function Results() {
-  const recipeResults = useSelector((state) => state.recipeResults);
-  const search = useSelector((state) => state.search);
+  const [search, setSearch] = useState("");
 
+  const recipeResults = useSelector((state) => state.recipeResults);
   const dispatch = useDispatch();
 
   const inputChange = (event) => {
     event.preventDefault();
-    searchSet(event.target.value);
+    setSearch(event.target.value);
   };
 
   const formSubmit = async () => {
