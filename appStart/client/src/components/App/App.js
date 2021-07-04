@@ -1,91 +1,68 @@
+/* eslint-disable init-declarations */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
+import { Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { recipeFound } from "../../features/Recipes/recipeSlice";
+import axios from "axios";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Login from "../../pages/Login";
 import About from "../../pages/About";
+import Results from "../../pages/Results";
 import Recipes from "../../pages/Recipes";
+import Recipe from "../../pages/Recipe";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
-import recipe from "../recipes/recipe.json";
 import Footer from "../Footer/Footer";
 
-let par;
+import history from "../History/history";
 
+/**
+ *
+ */
 function App() {
+  const dispatch = useDispatch();
 
-    const [search, setSearch] = useState("");
-    // const[result , setResult]=useState([]);
+  /**
+   *
+   */
+  async function dispatchAPISet() {
+    await axios
+      .get("/api/recipe")
+      .then(({ data }) => {
+        return data;
+      })
+      .then((morsePower) => {
+        dispatch(recipeFound(morsePower));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
-    const handleInputChange = (event) => {
-        setSearch( event.target.value);
-        console.log(event.target.value);
-       par = event.target.value;
+  useEffect(() => {
+    dispatchAPISet();
+  });
 
-    }
-
-
-
-const handleFormSubmitChange =(event)=>{
-    event.preventDefault();
-    if(par===recipe[0].title){
-    console.log(recipe [0]);
-   } 
-else{
-        console.log("check");
-        
-    }
+  return (
+    <Router history={history}>
+      <Header />
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/categories" component={Categories} />
+        <Route exact path="/recipes" component={Recipes} />
+        <Route path="/recipes/:title" component={Recipe} />;
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/search" component={Results} />
+      </Switch>
+      <Footer />
+    </Router>
+  );
 }
-
-
-
-return (
-
-    <div>
-        <div>
-  {/* search={search} */}
-            <Header handleInputChange={handleInputChange} 
-            handleFormSubmitChange={handleFormSubmitChange} />
-        </div>
-
-        <Router>
-            <div>
-                <Navbar />
-
-                <Switch>
-                    <Route path="/categories">
-                        <Categories recipe={recipe} />
-                    </Route>
-                    <Route path="/recipes">
-                        <Recipes recipe={recipe} />
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                    {/* <Route path ="/result">
-                        <Result  ={result} />
-                    </Route> */}
-
-                </Switch>
-            </div>
-        </Router>
-        <Footer />
-    </div>
-);
- }
 
 export default App;

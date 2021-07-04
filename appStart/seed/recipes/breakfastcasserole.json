@@ -1,12 +1,12 @@
 {
   "title": "Breakfast Casserole",
   "description": "Bacon Egg and Bread Casserole. Good for brunches.",
-  "beforeyoubegin": "Butter 2 quart casserole\\nPreheat oven to 400 degrees",
+  "beforeyoubegin": "Butter 2 quart casserole<br />Preheat oven to 400 degrees",
   "time": "30 minutes to prepare, 15 to cook",
   "yields": "Feeds about 8 for brunch",
-  "Ingredients": "8 slices bacon\\n2 cups fresh bread cubes\\n1 cup milk\\n½ teaspoon salt\\n8 eggs\\n1 tablespoon butter\\n½ teaspoon seasoned salt\\n½ teaspoon seasoned pepper\\n8 slices swiss cheese\\n1 cup bread crumbs\\n3 tablespoons butter",
-  "Steps": "Cook and crumple bacon.  Set aside.\\nSoak break cubes in milk and salt. Set side.\\nSoft scramble eggs in butter\\nDrain bread and add to eggs\\nMix in seasoned salt and pepper\\nPlace in buttered casserole dish\\nLayer swiss cheese over top\\nBlend breadcrumbs and butter\\\nSprinkle breadcrumb mixture over top\\nSprinkle bacon over top\\nBake for 15 minutes",
-  "Notes/Pictures/History": "Can be assembled a day early and then baked later",
-  "Sources": "Dee Karl",
-  "Category": "Casserole"
+  "ingredients": "8 slices bacon<br />2 cups fresh bread cubes<br />1 cup milk<br />½ teaspoon salt<br />8 eggs<br />1 tablespoon butter<br />½ teaspoon seasoned salt<br />½ teaspoon seasoned pepper<br />8 slices swiss cheese<br />1 cup bread crumbs<br />3 tablespoons butter",
+  "steps": "Cook and crumple bacon.  Set aside.<br />Soak break cubes in milk and salt. Set side.<br />Soft scramble eggs in butter<br />Drain bread and add to eggs<br />Mix in seasoned salt and pepper<br />Place in buttered casserole dish<br />Layer swiss cheese over top<br />Blend breadcrumbs and butter<br />Sprinkle breadcrumb mixture over top<br />Sprinkle bacon over top<br />Bake for 15 minutes",
+  "notes": "Can be assembled a day early and then baked later",
+  "sources": "Dee Karl",
+  "category": "Casserole"
 }

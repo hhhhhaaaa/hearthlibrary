@@ -4,9 +4,9 @@
   "beforeyoubegin": "Need instant pot",
   "time": "Roughly 2 hours.",
   "yields": "Enough for a 12 pound turkey",
-  "Ingredients": "2 sliced apples\\n½ (11 oz.) package dried apricots\\n1 (13 oz.) can chunk pineapple, undrained\\n1 can cherry pie filling\\n1 can pears\\n1 tablespoon brown sugar\\n1 teaspoon cinnamon\\n4 tablespoons butter",
-  "Steps": "Drain pears\\nMix all ingredients together except for butter\\nPour into casserole\\nDot with butter\\nBake at 325 covered for 50 minutes\\nBake uncovered for 15 minutes more\\nServe warm",
-  "Notes/Pictures/History": "Especially good in the winter and fall",
-  "Sources": "Dee Karl",
-  "categories": "Sides"
+  "ingredients": "2 sliced apples<br />½ (11 oz.) package dried apricots<br />1 (13 oz.) can chunk pineapple, undrained<br />1 can cherry pie filling<br />1 can pears<br />1 tablespoon brown sugar<br />1 teaspoon cinnamon<br />4 tablespoons butter",
+  "steps": "Drain pears<br />Mix all ingredients together except for butter<br />Pour into casserole<br />Dot with butter<br />Bake at 325 covered for 50 minutes<br />Bake uncovered for 15 minutes more<br />Serve warm",
+  "notes": "Especially good in the winter and fall",
+  "sources": "Dee Karl",
+  "category": "Sides"
 }
