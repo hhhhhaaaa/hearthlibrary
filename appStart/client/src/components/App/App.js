@@ -15,6 +15,7 @@ import About from "../../pages/About";
 import Results from "../../pages/Results";
 import Recipes from "../../pages/Recipes";
 import Recipe from "../../pages/Recipe";
+import RecipeForm from "../../pages/RecipeForm";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -54,12 +55,13 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/categories" component={Categories} />
         <Route path="/categories/:category" component={Category} />;
         <Route exact path="/recipes" component={Recipes} />
         <Route path="/recipes/:title" component={Recipe} />;
         <Route exact path="/login" component={Login} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/newRecipe" component={RecipeForm} />
         <Route exact path="/search" component={Results} />
       </Switch>
       <Footer />

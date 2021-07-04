@@ -9,10 +9,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="navbar  navbar-expand-sm navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
+    <nav className="navbar navbar-expand-sm navbar-light bg-light">
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link
@@ -64,6 +61,18 @@ const Navbar = () => {
             }
           >
             Search
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/newRecipe"
+            className={
+              location.pathname === "/newRecipe"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            New Recipe
           </Link>
         </li>
       </ul>
