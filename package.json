@@ -9,7 +9,7 @@
     "start": " set NODE_ENV=production && node appStart/server/server.js",
     "start:dev": "set NODE_ENV=development && concurrently \"nodemon --ignore 'appStart/client/*'\" \"npm run client\"",
     "client": "cd appStart/client && npm run start",
-    "seed": "cd appStart/seed/recipes && for %x in (./*); do mongoimport -d hearthdb -c hearth --file %x --type json",
+    "seed": "cd appStart/seed/recipes && for %x in (./*) do mongoimport -d hearthdb -c hearth --file %x --type json",
     "install": "cd appStart/client && npm install",
     "build": "cd appStart/client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -44,7 +44,9 @@
     "eslint-plugin-jsdoc": "^35.4.1",
     "express": "^4.17.1",
     "jsdoc": "^3.6.7",
-    "mongoose": "^5.13.0"
+    "mongoose": "^5.13.0",
+    "node-html-parser": "^3.3.6",
+    "svg-loaders-react": "^2.2.1"
   },
   "jest": {
     "collectCoverageFrom": [

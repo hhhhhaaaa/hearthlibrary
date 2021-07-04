@@ -1,11 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
 /**
- * @param props
- * @param props.recipe
+ *
  */
-function Categories({ recipe }) {
+function Categories() {
+  const recipe = useSelector((state) => state.recipe);
+
   return (
     <div>
       <h2> The categories</h2>
@@ -18,9 +19,5 @@ function Categories({ recipe }) {
     </div>
   );
 }
-
-Categories.propTypes = {
-  recipe: PropTypes.array
-};
 
 export default Categories;
