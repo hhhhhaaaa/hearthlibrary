@@ -5,6 +5,9 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "@popperjs/core": "^2.9.2",
     "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -12,7 +15,6 @@
     "@testing-library/user-event": "^13.1.9",
     "autoprefixer": "10.2.6",
     "axios": "^0.21.1",
-    "babel-core": "6.26.3",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
@@ -121,7 +123,8 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   }
 }
