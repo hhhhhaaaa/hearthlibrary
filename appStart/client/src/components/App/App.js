@@ -9,6 +9,7 @@ import { recipeFound } from "../../features/Recipes/recipeSlice";
 import axios from "axios";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
+import Category from "../../pages/Category";
 import Login from "../../pages/Login";
 import About from "../../pages/About";
 import Results from "../../pages/Results";
@@ -54,6 +55,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/categories" component={Categories} />
+        <Route path="/categories/:category" component={Category} />;
         <Route exact path="/recipes" component={Recipes} />
         <Route path="/recipes/:title" component={Recipe} />;
         <Route exact path="/login" component={Login} />
