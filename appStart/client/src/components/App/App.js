@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -18,7 +18,7 @@ import Preferences from "../Preferences/Preferences";
 
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
-import Login from "../../pages/Login";
+import Login from "../../pages/Login/Login";
 import About from "../../pages/About";
 
 // import Navbar from "../Navbar";
@@ -28,12 +28,15 @@ import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import recipe from "../recipes/recipe.json";
 import Footer from "../Footer/Footer";
+import useToken from "./useToken";
 
 /**
  *
  */
+
+
 function App() {
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />

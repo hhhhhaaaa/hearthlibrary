@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./login.css";
 
 /**
  *
@@ -19,7 +20,7 @@ export default function Login({ setToken }) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-  const handleSubmit =async e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
       username,
@@ -27,9 +28,10 @@ export default function Login({ setToken }) {
     });
     setToken(token);
   }
+
     return(
       <div className= "login-wrapper">
-      <h1>Please Login!</h1>
+      <h2>Please Login!</h2>
       <form onSubmit={handleSubmit}>
         <label>
             <p>Username</p>
@@ -42,9 +44,12 @@ export default function Login({ setToken }) {
         <div>
           <button type="submit">Submit</button>
         </div>
+        <div>
+          <button type="createAccount">Create Account</button>
+        </div>
       </form>
       </div>
-    )  
+    );
 }
 
 Login.propTypes = {
