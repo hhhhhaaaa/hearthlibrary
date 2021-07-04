@@ -1,10 +1,10 @@
 /* eslint-disable init-declarations */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Router, Switch, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { recipeFound } from "../../features/Recipes/recipeSlice";
 import axios from "axios";
 import Home from "../../pages/Home";

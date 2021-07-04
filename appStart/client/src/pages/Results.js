@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { useDispatch, useSelector } from "react-redux";
-import { recipeResultsFound } from "../features/RecipeResults/recipeResultsSlice";
+import {
+  recipeResultsFound,
+  recipeResultsClear
+} from "../features/RecipeResults/recipeResultsSlice";
 
 import axios from "axios";
-
-const recipeArray = [];
+let recipeArray = [];
 
 /**
  *
@@ -41,8 +43,8 @@ function Results() {
           return null;
         })
         .then((morsePower) => {
-          console.log(recipeArray);
           dispatch(recipeResultsFound(recipeArray));
+          setSearch("");
         })
         .catch((error) => {
           console.log(error);
@@ -55,6 +57,15 @@ function Results() {
       // eslint-disable-next-line react/jsx-key
       <SearchResult key={index} />
     );
+  });
+
+  useEffect(() => {
+    return () => {
+      if (search === "") {
+        dispatch(recipeResultsClear());
+        recipeArray = [];
+      }
+    };
   });
 
   if (recipeResults.length <= 0) {

@@ -1,16 +1,13 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 /**
  *
  */
 function SearchResult() {
   const recipeResults = useSelector((state) => state.recipeResults);
-
-  console.log("Search");
-  console.log(recipeResults);
 
   return (
     <ul>
