@@ -1,58 +1,103 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import SearchRecipe from "../components/SearchRecipe/SearchRecipe";
+import React from "react";
 import SearchResult from "../components/SearchResult/SearchResult";
-import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { recipeResultsFound } from "../features/RecipeResults/recipeResultsSlice";
+import { searchSet } from "../features/Search/searchSlice";
+
+import axios from "axios";
+
+const recipeArray = [];
 
 /**
- * @param props
- * @param props.recipe
+ *
  */
-function Results({ recipe }) {
-  const [search, setSearch] = useState("");
-  const [result, setResult] = useState([]);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [ingredients, setIngredients] = useState("");
+function Results() {
+  const recipeResults = useSelector((state) => state.recipeResults);
+  const search = useSelector((state) => state.search);
 
-  const handleInputChange = (event) => {
-    setSearch(event.target.value);
-    console.log(event.target.value);
-  };
-  const handleFormSubmitChange = (event) => {
+  const dispatch = useDispatch();
+
+  const inputChange = (event) => {
     event.preventDefault();
+    searchSet(event.target.value);
   };
 
-  console.log(recipe);
+  const formSubmit = async () => {
+    if (search) {
+      await axios
+        .get("/api/recipe")
+        .then(async ({ data }) => {
+          await data.find((recFind) => {
+            const recipeTitle = recFind.title.toLowerCase();
+            const recipeResultsTitle = search.toLowerCase();
 
-  if (search === recipe[0].title) {
-    console.log(search);
-    setTitle(recipe.title);
-    setDescription(recipe.description);
-    setIngredients(recipe.ingredients);
+            if (recipeTitle.includes(recipeResultsTitle)) {
+              recipeArray.push(recFind);
+            }
 
+            return null;
+          });
+
+          return null;
+        })
+        .then((morsePower) => {
+          console.log(recipeArray);
+          dispatch(recipeResultsFound(recipeArray));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
+  const recipeList = recipeResults.map((rec, index) => {
     return (
-      <div>
-        <SearchRecipe
-          value={search}
-          handleInputChange={handleInputChange}
-          handleFormSubmitChange={handleFormSubmitChange}
-        />
+      // eslint-disable-next-line react/jsx-key
+      <SearchResult key={index} />
+    );
+  });
 
-        <SearchResult
-          title={title}
-          description={description}
-          Ingredients={ingredients}
+  if (recipeResults.length <= 0) {
+    return (
+      <div className="input-group  w-50">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search For Recipe...."
+          value={search}
+          // eslint-disable-next-line react/prop-types
+          onChange={inputChange}
         />
+        <div className="input-group-append">
+          <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+            Search Recipe
+          </button>
+        </div>
+        <h2>No Results; Search Above</h2>
       </div>
     );
   }
 
-  return <h2>No page</h2>;
+  return (
+    <div className="input-group  w-50">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Search For Recipe...."
+        value={search}
+        // eslint-disable-next-line react/prop-types
+        onChange={inputChange}
+      />
+      <div className="input-group-append">
+        <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+          Search Recipe
+        </button>
+      </div>
+      <h2>Results</h2>
+      {recipeList}
+    </div>
+  );
 }
-
-Results.propTypes = {
-  recipe: PropTypes.array
-};
 
 export default Results;
