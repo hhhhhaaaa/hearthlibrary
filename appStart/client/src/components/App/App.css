@@ -18,3 +18,30 @@
   background-color: aqua;
   
 }
+
+
+.menu{
+  color: white; 
+  background-color: #282c34;
+  font-style: italic;
+}
+
+.about{
+  /* background-image: url("../../pages/image/image2.jpg"); */
+  background-repeat: no-repeat,repeat;
+  background-position: center;
+  background-size: 100%;
+  font-weight: bold;
+  background-color: brown;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black
+  
+ 
+}
+.span {
+  background-color: tomato;
+  font-weight: bold;
+  color: aqua;
+}
