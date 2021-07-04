@@ -45,8 +45,7 @@
     "express": "^4.17.1",
     "jsdoc": "^3.6.7",
     "mongoose": "^5.13.0",
-    "node-html-parser": "^3.3.6",
-    "svg-loaders-react": "^2.2.1"
+    "node-html-parser": "^3.3.6"
   },
   "jest": {
     "collectCoverageFrom": [
