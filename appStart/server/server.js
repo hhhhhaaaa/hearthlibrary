@@ -27,15 +27,13 @@ app.get("*", (req, res) => {
   res.sendFile("index.html", { root });
 });
 
-// Login
 app.use('/login', (req, res) => {
-  res.send({
-    token: "aTestToken"
-  });
+  res.send({ token: "testToken" });
 });
 
 // Add routes, both API and view
 app.use(routes);
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hearthdb", {

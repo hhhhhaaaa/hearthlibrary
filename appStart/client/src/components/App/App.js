@@ -12,6 +12,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import Preferences from "../Preferences/Preferences";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
+import Login from "../../pages/Login/Login";
 import Category from "../../pages/Category";
 import Login from "../../pages/Login";
 import About from "../../pages/About";
@@ -21,14 +22,18 @@ import Recipe from "../../pages/Recipe";
 import RecipeForm from "../../pages/RecipeForm";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
+import useToken from "./useToken";
 
 import history from "../History/history";
 
 /**
  *
  */
+
+
 function App() {
   const dispatch = useDispatch();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />
