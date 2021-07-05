@@ -281,18 +281,24 @@ function RecipeForm() {
 
     if (!recipeTitleArray.includes(title)) {
       if (formsValid) {
-        console.log("Step Two");
+        const formatB = before.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+        const formatT = time.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+        const formatI = ingredients.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+        const formatSt = steps.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+        const formatN = notes.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+        const formatSo = sources.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
+
         axios
           .post("api/recipe", {
             title,
             description,
-            beforeyoubegin: before,
-            time,
+            beforeyoubegin: formatB,
+            time: formatT,
             yields: yeld,
-            ingredients,
-            steps,
-            notes,
-            sources,
+            ingredients: formatI,
+            steps: formatSt,
+            notes: formatN,
+            sources: formatSo,
             category
           })
           .catch((error) => {
