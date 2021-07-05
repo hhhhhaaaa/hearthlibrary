@@ -38,7 +38,7 @@ if (env.stringified["process.env"].NODE_ENV !== '"production"') {
 }
 
 // Note: defined here because it will be used more than once.
-const cssFilename = "static/css/[name].[fullhash:8].css";
+const cssFilename = "static/css/[name].css";
 
 /* ExtractTextPlugin expects the build output to be flat.
    (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
@@ -59,14 +59,9 @@ module.exports = {
 
   /* We generate sourcemaps in production. This is slow but gives good results.
      You can exclude the *.map files from the build during deployment. */
-  devtool: shouldUseSourceMap
-? "source-map"
-: false,
+  devtool: shouldUseSourceMap ? "source-map" : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-require.resolve("./polyfills"),
-paths.appIndexJs
-],
+  entry: [require.resolve("./polyfills"), paths.appIndexJs],
   output: {
     // The build folder.
     path: path.resolve(__dirname, "dist"),
@@ -74,8 +69,8 @@ paths.appIndexJs
     /* Generated JS file names (with nested folders).
        There will be one main bundle, and one file per asynchronous chunk.
        We don't currently advertise code splitting but Webpack supports it. */
-    filename: "static/js/[name].[fullhash:8].js",
-    chunkFilename: "static/js/[name].[fullhash:8].chunk.js",
+    filename: "static/js/[name].js",
+    chunkFilename: "static/js/[name].chunk.js",
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
@@ -95,7 +90,8 @@ paths.appIndexJs
       // eslint-disable-next-line function-paren-newline
     ].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
-      process.env.NODE_PATH.split(path.delimiter).filter(Boolean)),
+      process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
+    ),
 
     /* These are the reasonable defaults supported by the Node ecosystem.
        We also include JSX as a common component filename extension to support
@@ -103,14 +99,7 @@ paths.appIndexJs
        https://github.com/facebookincubator/create-react-app/issues/290
        `web` extension prefixes have been added for better support
        for React Native Web. */
-    extensions: [
-".web.js",
-".mjs",
-".js",
-".json",
-".web.jsx",
-".jsx"
-],
+    extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
     alias: {
 
       /* Support React Native Web
@@ -155,19 +144,10 @@ paths.appIndexJs
           /* "url" loader works just like "file" loader but it also embeds
              assets smaller than specified size as data URLs to avoid requests. */
           {
-            test: [
-/\.bmp$/u,
-/\.gif$/u,
-/\.jpe?g$/u,
-/\.png$/u,
-/\.svg$/u
-],
-            loader: "url-loader",
-            options: {
-              limit: 10000,
-              name: "static/media/[name].[fullhash:8].[ext]"
-            },
-            exclude: ["/src/seed/"]
+            test: [/\.bmp$/u, /\.gif$/u, /\.jpe?g$/u, /\.png$/u, /\.svg$/u],
+            exclude: [jsTest, /\.html$/u, /\.json$/u, "/src/seed/"],
+            type: "asset/resource",
+            generator: { filename: "static/media/[name].[ext]" }
           },
           // Process JS with Babel.
           {
@@ -194,36 +174,15 @@ paths.appIndexJs
              in the main CSS file. */
           {
             test: /\.css$/u,
-            use: [
-MiniCssExtractPlugin.loader,
-"css-loader",
-"postcss-loader"
-],
+            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
             exclude: ["/src/seed/"]
-          },
+          }
 
           /* "file" loader makes sure assets end up in the `build` folder.
              When you `import` an asset, you get its filename.
              This loader doesn't use a "test" so it will catch all modules
              that fall through the other loaders. */
-          {
-            loader: "file-loader",
-
-            /* Exclude `js` files to keep "css" loader working as it injects
-               it's runtime that would otherwise processed through "file" loader.
-               Also exclude `html` and `json` extensions so they get processed
-               by webpacks internal loaders. */
-            exclude: [
-jsTest,
-/\.html$/u,
-/\.json$/u,
-"/src/seed/"
-],
-            options: {
-              name: "static/media/[name].[fullhash:8].[ext]"
-            }
-          }
 
           /* ** STOP ** Are you adding a new loader?
              Make sure to add the new loader(s) before the "file" loader. */

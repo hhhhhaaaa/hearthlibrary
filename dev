@@ -1,0 +1,5 @@
+
+> hearth@1.0.0 start C:\Users\12109\hearthlibrary
+>  set NODE_ENV=production && node appStart/server/server.js
+
+🌎  ==> API Server now listening on PORT 3000!

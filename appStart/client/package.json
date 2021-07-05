@@ -5,17 +5,22 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "@popperjs/core": "^2.9.2",
+    "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
-    "autoprefixer": "7.1.6",
-    "babel-core": "6.26.3",
-    "babel-jest": "^27.0.2",
+    "autoprefixer": "10.2.6",
+    "axios": "^0.21.1",
+    "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "babel-runtime": "6.26.0",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.0.2",
     "case-sensitive-paths-webpack-plugin": "2.4.0",
     "chalk": "4.1.1",
     "css-loader": "^5.2.6",
@@ -29,13 +34,15 @@
     "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "fs-extra": "10.0.0",
-    "html-webpack-plugin": "^5.3.1",
-    "jest": "^27.0.4",
+    "history": "^4.10.1",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
     "jquery": "^3.6.0",
     "meow": "^10.0.1",
-    "mini-css-extract-plugin": "^1.6.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "mongoose": "^5.13.0",
     "object-assign": "4.1.1",
-    "postcss": "^8.3.4",
+    "postcss": "^8.3.5",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-loader": "^6.1.0",
     "promise": "8.1.0",
@@ -44,13 +51,15 @@
     "react-bootstrap": "^1.6.1",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "replace-in-file": "^6.2.0",
     "resolve": "1.20.0",
-    "style-loader": "2.0.0",
+    "style-loader": "3.0.0",
+    "svg-loaders-react": "^2.2.1",
     "url-loader": "4.1.1",
     "web-vitals": "^2.0.1",
-    "webpack": "^5.39.0",
+    "webpack": "^5.41.1",
     "webpack-dev-server": "^3.11.2",
     "webpack-manifest-plugin": "^3.1.1",
     "whatwg-fetch": "3.6.2",
@@ -75,7 +84,7 @@
   },
   "devDependencies": {
     "dotenv-expand": "^5.1.0",
-    "terser-webpack-plugin": "^5.1.3"
+    "terser-webpack-plugin": "^5.1.4"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -116,10 +125,13 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      [
+        "@babel/transform-runtime"
+      ]
     ]
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
   }
 }

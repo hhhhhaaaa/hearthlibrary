@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const recipeSchema = new Schema({
   title: {
     type: String,
     trim: true,
     required: "Enter the Title of the Recipe"
+  },
+  description: {
+    type: String,
+    trim: true,
+    required: "Enter the Description of the Recipe"
   },
   beforeyoubegin: {
     type: String,
@@ -38,9 +43,12 @@ const recipeSchema = new Schema({
     type: String,
     trim: true,
     required: "Enter Where the Recipe is From and or the Creator(s)"
+  },
+  category: {
+    type: String,
+    trim: true,
+    required: "Enter the Category of the Recipe"
   }
 });
 
-const Recipe = mongoose.model("Recipe", recipeSchema);
-
-module.exports = Recipe;
+module.exports = mongoose.model("Recipe", recipeSchema, "hearth");
