@@ -11,6 +11,7 @@ import rings from "./svg-loaders/rings.svg";
 import spinningcircles from "./svg-loaders/spinning-circles.svg";
 import tailspin from "./svg-loaders/tail-spin.svg";
 import threedots from "./svg-loaders/three-dots.svg";
+import history from "../History/history";
 import "./svg.css";
 
 const loadersArray = [
@@ -32,14 +33,36 @@ const randomLoader =
   loadersArray[Math.floor(Math.random() * loadersArray.length)];
 
 /**
+ * @param event
+ */
+function refreshPage(event) {
+  event.preventDefault();
+  window.location.reload();
+}
+
+/**
+ * @param event
+ */
+function returnHome(event) {
+  event.preventDefault();
+  history.push("/");
+}
+
+/**
  *
  */
 export default function SVG() {
   return (
-    <img
-      className="svgLoader"
-      src={randomLoader}
-      alt="An Animated Loading Bar"
-    />
+    <div>
+      <img
+        className="svgLoader"
+        src={randomLoader}
+        alt="An Animated Loading Bar"
+      />
+      <div className="svgText">
+        <button onClick={refreshPage}>Refresh Page</button>
+        <button onClick={returnHome}>Home</button>
+      </div>
+    </div>
   );
 }

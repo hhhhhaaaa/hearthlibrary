@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Bars } from "svg-loaders-react";
+import SVG from "../components/SVG/SVG";
 
 /**
  *
@@ -103,7 +103,7 @@ function Recipe() {
 
   return (
     <div>
-      <Bars />;
+      <SVG />
     </div>
   );
 }

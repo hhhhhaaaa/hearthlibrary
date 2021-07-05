@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SubmitFormErrors from "../components/SubmitFormErrors/submitFormErrors";
 import axios from "axios";
+import history from "../components/History/history";
 
 /**
  *
@@ -273,7 +274,7 @@ function RecipeForm() {
     }
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     const recipeTitleArray = recipeArray.map((item) => {
       return item.title;
@@ -288,7 +289,7 @@ function RecipeForm() {
         const formatN = notes.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
         const formatSo = sources.valueOf().replace(/\r\n|\r|\n/gu, "<br />");
 
-        axios
+        await axios
           .post("api/recipe", {
             title,
             description,
@@ -304,6 +305,7 @@ function RecipeForm() {
           .catch((error) => {
             console.log(error);
           });
+        history.push(`/recipes/${title}`);
       }
     }
   };
