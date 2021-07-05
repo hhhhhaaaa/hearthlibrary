@@ -19,12 +19,13 @@ function Results() {
   const recipeResults = useSelector((state) => state.recipeResults);
   const dispatch = useDispatch();
 
-  const inputChange = (event) => {
+  const handleInputChange = (event) => {
     event.preventDefault();
     setSearch(event.target.value);
   };
 
-  const formSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     if (search) {
       await axios
         .get("/api/recipe")
@@ -77,10 +78,10 @@ function Results() {
           placeholder="Search For Recipe...."
           value={search}
           // eslint-disable-next-line react/prop-types
-          onChange={inputChange}
+          onChange={handleInputChange}
         />
         <div className="input-group-append">
-          <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+          <button className="btn btn-dark" onClick={handleFormSubmit}>
             Search Recipe
           </button>
         </div>
@@ -97,10 +98,10 @@ function Results() {
         placeholder="Search For Recipe...."
         value={search}
         // eslint-disable-next-line react/prop-types
-        onChange={inputChange}
+        onChange={handleInputChange}
       />
       <div className="input-group-append">
-        <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+        <button className="btn btn-dark" onClick={handleFormSubmit}>
           Search Recipe
         </button>
       </div>
