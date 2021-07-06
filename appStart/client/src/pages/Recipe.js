@@ -6,7 +6,7 @@ import { Bars } from "svg-loaders-react";
 /**
  *
  */
-function Recipes() {
+function Recipe() {
   const recipe = useSelector((state) => state.recipe);
   // eslint-disable-next-line prefer-destructuring
   const recipeArray = recipe[0];
@@ -107,4 +107,4 @@ function Recipes() {
     </div>
   );
 }
-export default Recipes;
+export default Recipe;
