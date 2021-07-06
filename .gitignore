@@ -1,3 +1,21 @@
 node_modules
 
 .env
+
+_pgbackup/
+
+_pginfo/
+
+originals/
+
+thumbnails/
+
+projectdb.pgml
+
+pinegrow.json
+
+homepage.html
+
+custom.css
+
+bootstrap_theme/

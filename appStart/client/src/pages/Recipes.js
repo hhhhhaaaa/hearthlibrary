@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Bars } from "svg-loaders-react";
+import SVG from "../components/SVG/SVG";
 
 /**
  *
@@ -27,7 +27,7 @@ function Recipes() {
 
   return (
     <div>
-      <Bars />;
+      <SVG />
     </div>
   );
 }

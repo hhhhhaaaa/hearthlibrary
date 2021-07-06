@@ -8,10 +8,14 @@ export const recipeResultsSlice = createSlice({
   reducers: {
     recipeResultsFound(state, action) {
       state.push(action.payload);
+    },
+    recipeResultsClear(state) {
+      state.length = 0;
     }
   }
 });
 
-export const { recipeResultsFound } = recipeResultsSlice.actions;
+export const { recipeResultsFound, recipeResultsClear } =
+  recipeResultsSlice.actions;
 
 export default recipeResultsSlice.reducer;

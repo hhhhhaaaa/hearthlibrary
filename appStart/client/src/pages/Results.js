@@ -1,29 +1,31 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { useDispatch, useSelector } from "react-redux";
-import { recipeResultsFound } from "../features/RecipeResults/recipeResultsSlice";
-import { searchSet } from "../features/Search/searchSlice";
+import {
+  recipeResultsFound,
+  recipeResultsClear
+} from "../features/RecipeResults/recipeResultsSlice";
 
 import axios from "axios";
-
-const recipeArray = [];
+let recipeArray = [];
 
 /**
  *
  */
 function Results() {
-  const recipeResults = useSelector((state) => state.recipeResults);
-  const search = useSelector((state) => state.search);
+  const [search, setSearch] = useState("");
 
+  const recipeResults = useSelector((state) => state.recipeResults);
   const dispatch = useDispatch();
 
-  const inputChange = (event) => {
+  const handleInputChange = (event) => {
     event.preventDefault();
-    searchSet(event.target.value);
+    setSearch(event.target.value);
   };
 
-  const formSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     if (search) {
       await axios
         .get("/api/recipe")
@@ -42,8 +44,8 @@ function Results() {
           return null;
         })
         .then((morsePower) => {
-          console.log(recipeArray);
           dispatch(recipeResultsFound(recipeArray));
+          setSearch("");
         })
         .catch((error) => {
           console.log(error);
@@ -58,6 +60,15 @@ function Results() {
     );
   });
 
+  useEffect(() => {
+    return () => {
+      if (search === "") {
+        dispatch(recipeResultsClear());
+        recipeArray = [];
+      }
+    };
+  });
+
   if (recipeResults.length <= 0) {
     return (
       <div className="input-group  w-50">
@@ -67,10 +78,10 @@ function Results() {
           placeholder="Search For Recipe...."
           value={search}
           // eslint-disable-next-line react/prop-types
-          onChange={inputChange}
+          onChange={handleInputChange}
         />
         <div className="input-group-append">
-          <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+          <button className="btn btn-dark" onClick={handleFormSubmit}>
             Search Recipe
           </button>
         </div>
@@ -87,10 +98,10 @@ function Results() {
         placeholder="Search For Recipe...."
         value={search}
         // eslint-disable-next-line react/prop-types
-        onChange={inputChange}
+        onChange={handleInputChange}
       />
       <div className="input-group-append">
-        <button className="btn btn-dark" onMouseDown={() => formSubmit()}>
+        <button className="btn btn-dark" onClick={handleFormSubmit}>
           Search Recipe
         </button>
       </div>

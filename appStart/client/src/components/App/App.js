@@ -1,10 +1,10 @@
 /* eslint-disable init-declarations */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Router, Switch, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { recipeFound } from "../../features/Recipes/recipeSlice";
 import axios from "axios";
 import Home from "../../pages/Home";
@@ -15,6 +15,7 @@ import About from "../../pages/About";
 import Results from "../../pages/Results";
 import Recipes from "../../pages/Recipes";
 import Recipe from "../../pages/Recipe";
+import RecipeForm from "../../pages/RecipeForm";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -54,12 +55,13 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/categories" component={Categories} />
         <Route path="/categories/:category" component={Category} />;
         <Route exact path="/recipes" component={Recipes} />
         <Route path="/recipes/:title" component={Recipe} />;
         <Route exact path="/login" component={Login} />
-        <Route exact path="/about" component={About} />
+        <Route exact path="/newRecipe" component={RecipeForm} />
         <Route exact path="/search" component={Results} />
       </Switch>
       <Footer />

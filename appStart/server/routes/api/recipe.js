@@ -6,7 +6,7 @@ router.route("/").get(recipeController.findAll).post(recipeController.create);
 
 // Matches with "/api/posts/:id"
 router
-  .route("/:id")
+  .route("/:title")
   .get(recipeController.findById)
   .put(recipeController.update)
   .delete(recipeController.remove);

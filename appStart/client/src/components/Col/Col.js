@@ -19,7 +19,7 @@ function Col({ size, children }) {
 }
 
 Col.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.any,
   size: PropTypes.string
 };
 
