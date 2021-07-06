@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 // eslint-disable-next-line space-before-blocks
 /**
