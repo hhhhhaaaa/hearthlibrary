@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import SVG from "../components/SVG/SVG";
+import "./Recipe.css";
 
 /**
  *
@@ -58,6 +59,10 @@ function Recipe() {
             <li>
               <h2>Title</h2>
               <p>{rec.title}</p>
+            </li>
+            <li>
+              <h2>Picture</h2>
+              <img src={`${rec.picture}.jpg`} />
             </li>
             <li>
               <h2>Description </h2>

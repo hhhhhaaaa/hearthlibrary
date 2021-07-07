@@ -52,6 +52,10 @@ const RecipeSchema = new Schema({
   tags: {
     type: String,
     trim: true
+  },
+  picture: {
+    type: String,
+    trim: true
   }
 });
 
