@@ -71,55 +71,50 @@ function Results() {
 
   if (recipeResults.length <= 0) {
     return (
-      <div className= "Search-form">
-      <div className="input-group  w-50">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search For Recipe...."
-          value={search}
-          // eslint-disable-next-line react/prop-types
-          onChange={handleInputChange}
-        />
-        <div className="input-group-append">
-          <button className="btn btn-dark" onClick={handleFormSubmit}>
-            Search Recipe
-          </button>
-        </div>       
+      <div className="Search-form">
+        <div className="input-group  w-50">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search For Recipe...."
+            value={search}
+            // eslint-disable-next-line react/prop-types
+            onChange={handleInputChange}
+          />
+          <div className="input-group-append">
+            <button className="btn btn-dark" onClick={handleFormSubmit}>
+              Search Recipe
+            </button>
+          </div>
+        </div>
       </div>
-      </div>
-
     );
   }
 
   return (
     <div>
       <div className="Search-form">
-    <div className="input-group w-50">
-      <input
-        type="text"
-        className="form-control  "
-        placeholder="Search For Recipe...."
-        value={search}
-        // eslint-disable-next-line react/prop-types
-        onChange={handleInputChange}
-      />
-      <div className="input-group-append">
-        <button className="btn btn-dark" onClick={handleFormSubmit}>
-          Search Recipe
-        </button>
-      </div>  
+        <div className="input-group w-50">
+          <input
+            type="text"
+            className="form-control  "
+            placeholder="Search For Recipe...."
+            value={search}
+            // eslint-disable-next-line react/prop-types
+            onChange={handleInputChange}
+          />
+          <div className="input-group-append">
+            <button className="btn btn-dark" onClick={handleFormSubmit}>
+              Search Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="Search-Result">
+        <h2 className="Search-h2">Results</h2>
+        {recipeList}
+      </div>
     </div>
-    </div>
-    <div className="Search-Result">
-    <h2 className ="Search-h2">Results</h2>
-      {recipeList}
-
-</div>
-    </div>
-
-
-
   );
 }
 

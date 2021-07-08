@@ -22,7 +22,8 @@ export default function Home() {
   while (recipe !== null && recipe.length >= 1) {
     const crazyRandomRecipe =
       recipeArray[Math.floor(Math.random() * recipeArray.length)];
-      console.log(crazyRandomRecipe);
+
+    console.log(crazyRandomRecipe);
     const recentRecipesArray = recipeArray.slice(
       Math.max(recipeArray.length - 5, 0)
     );
