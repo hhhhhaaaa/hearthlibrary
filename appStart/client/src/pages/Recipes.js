@@ -12,12 +12,12 @@ function Recipes() {
 
   if (recipe !== null && recipe.length >= 1) {
     return (
-      <div>
-        <h2> The Recipes we are serving today</h2>
+      <div className="menu">
+        <h2 className="text-center py-5"> The Recipes we are serving today</h2>
         <ul>
           {recipeArray.map((item, index) => (
-            <li key={index}>
-              <a href={`/recipes/${item.title}`}>{item.title}</a>
+            <li key={index} className=" span" >
+              <a href={`/recipes/${item.title}`}><span className=" span" >{item.title}</span></a>
             </li>
           ))}
         </ul>

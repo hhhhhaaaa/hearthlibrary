@@ -1,5 +1,65 @@
-# hearthlibrary
+# Hearthlibrary
 A Family Recipe app used to help relocate family recipes to digital spaces.
+
+### Table of Contents
+ * [Descritption](#description)
+ * [Technologies-Used](#technologies-used)
+ * [Installation](#installation)
+ * [Usage](#usage)
+ * [License](#license)
+ * [Contribution](#contribution)
+ * [Tests](#tests)
+ * [Resources](#resources)
+ * [Questions](#questions)
+
+## Description
+  A Simple Restaurant Application using React JS, a JavaScript library to make awesome UI , Node JS, Express JS and MongoDB.
+
+  This application uses React JS component oriented UI creation paradigm. The components are written in JSX and ES6 style and are combined to get a single build for production purpose using Webpack.
+
+  ES6 module creation along with import /export is used. Babel is used to transpile all JSX code to vanilla JavaScript code. To install all the dependecies npm is used.
+
+  Back end is implemented using Node JS, Express JS and MongoDB. Atlas, the Cloud version of MongoDB is used.
+
+  For UI creation mostly Bootstarp little Css is used .
+
+  This is a responsive web application for viewing in both Mobile and Desktop.
+
+
+  [Back to Table](#table-of-contents) 
+
+
+## Technologies-Used
+  * HTML
+* CSS/Bootstrap
+* JavaScript
+* Node.js
+* Express.js
+* NoSQL/MongoDB
+* Mongoose
+* React
+* Heroku
+
+
+ ## Installation
+The application can be viewed live on Heroku here:[Hearthlibrary](The Link)
+
+
+ To Open the web browser and typehttp://localhost:3000 in the address bar to load the application
+
+1. Clone the repository:
+
+``` 
+git@github.com:hhhhhaaaa/hearthlibrary.git
+```
+2. Navigate inside the directory:
+
+``` 
+cd Hearthlibrary
+```
+
+
+
 
 # Getting Started with Create React App
 
