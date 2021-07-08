@@ -1,4 +1,5 @@
+/* eslint-disable global-require */
 module.exports = {
-  // eslint-disable-next-line global-require
-  Recipe: require("./recipe")
+  Recipe: require("./recipe"),
+  User: require("./user")
 };

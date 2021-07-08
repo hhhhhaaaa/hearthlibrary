@@ -1,36 +1,61 @@
 const express = require("express");
-
-const mongoose = require("mongoose");
 const routes = require("./routes");
+const InitiateMongoServer = require("./config/db");
+const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const path = require("path");
+const root = path.join(__dirname, "../client/config/dist/");
 
 require("dotenv").config();
 
-// Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
 
-// Serve up static assets (usually on heroku)
+app.use(morgan("dev"));
+app.use(cookieParser());
+app.use(
+  session({
+    key: "user_sid",
+    secret: "Secret Unnel",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      expires: 600000
+    }
+  })
+);
+app.use((req, res, next) => {
+  if (req.cookies.user_sid && !req.session.user) {
+    res.clearCookie("user_sid");
+  }
+  next();
+});
 
-// eslint-disable-next-line global-require
-const root = path.join(__dirname, "../client/config/dist/");
+const sessionChecker = (req, res, next) => {
+  if (req.session.user && req.cookies_user_sid) {
+    return res.redirect("/");
+  }
+  console.log(req.session);
 
-app.use(express.static(root));
+  return next();
+};
+
+app.get("/", sessionChecker, (req, res) => {
+  res.redirect("/login");
+});
 app.use(routes);
+
+app.use(express.static(path.join(__dirname)));
+app.use(express.static(root));
+
 app.get("*", (req, res) => {
   res.sendFile("index.html", { root });
 });
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hearthdb", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedTopology: true
-});
+InitiateMongoServer();
 
 // Start the API server
 app.listen(PORT, () => {

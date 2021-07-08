@@ -79,11 +79,8 @@ function RecipeForm() {
     ];
 
     const formValidation = () => {
-      console.log(trueArray);
       if (
         trueArray.every((item) => {
-          console.log("test");
-          console.log(item);
           if (item) {
             return true;
           }
