@@ -51,8 +51,8 @@ function Recipe() {
             <div>
               <ul>
                 <li>
-                  <h1>{category}</h1>
-                  <h2>Recipes</h2>
+                  <h1 className="textColor">{category}</h1>
+                  <h2 className="textColor">Recipes</h2>
                   {recipeFix.map((result, index) => (
                     <div key={index}>
                       <li className="textSubtle">{result.title}</li>
