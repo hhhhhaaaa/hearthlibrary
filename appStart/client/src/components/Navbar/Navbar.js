@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 // eslint-disable-next-line space-before-blocks
 /**
@@ -9,10 +10,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="navbar  navbar-expand-sm navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
+    <nav className="navbar navbar-expand-sm navbar-light bg-light">
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link
@@ -64,6 +62,18 @@ const Navbar = () => {
             }
           >
             Search
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/newRecipe"
+            className={
+              location.pathname === "/newRecipe"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            New Recipe
           </Link>
         </li>
       </ul>

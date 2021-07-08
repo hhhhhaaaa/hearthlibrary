@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Bars } from "svg-loaders-react";
+import SVG from "../components/SVG/SVG";
+import "./Recipe.css";
 
 /**
  *
@@ -60,6 +61,10 @@ function Recipe() {
               <p>{rec.title}</p>
             </li>
             <li>
+              <h2>Picture</h2>
+              <img src={`${rec.picture}.jpg`} />
+            </li>
+            <li>
               <h2>Description </h2>
               <p>{rec.description}</p>
             </li>
@@ -103,7 +108,7 @@ function Recipe() {
 
   return (
     <div>
-      <Bars />;
+      <SVG />
     </div>
   );
 }

@@ -144,7 +144,14 @@ module.exports = {
           /* "url" loader works just like "file" loader but it also embeds
              assets smaller than specified size as data URLs to avoid requests. */
           {
-            test: [/\.bmp$/u, /\.gif$/u, /\.jpe?g$/u, /\.png$/u, /\.svg$/u],
+            test: [
+              /\.bmp$/u,
+              /\.gif$/u,
+              /\.jpe?g$/u,
+              /\.png$/u,
+              /\.svg$/u,
+              /\.ttf$/u
+            ],
             exclude: [jsTest, /\.html$/u, /\.json$/u, "/src/seed/"],
             type: "asset/resource",
             generator: { filename: "static/media/[name].[ext]" }
