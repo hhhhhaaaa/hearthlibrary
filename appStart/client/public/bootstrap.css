@@ -4303,18 +4303,6 @@ fieldset:disabled .btn {
     list-style: none;
 }
 
-.page-title {
-    display: grid;
-    padding: 0.5rem;
-    color: #bd8f00;
-    width: 100%;
-    font-family: 'Delius Unicase', cursive;
-    font-size: 100px;
-    text-transform: uppercase;
-    text-align: center;
-    align-items: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
     .nav-link {
         transition: none;

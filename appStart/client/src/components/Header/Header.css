@@ -3,7 +3,6 @@
 .page-title:hover,
 .page-title:visited,
 .page-title:active {
-  display: grid;
   padding: 0.5rem;
   color: #bd8f00;
   width: 100%;
@@ -14,7 +13,6 @@
   text-align: center;
   align-items: center;
   text-shadow: -6px 6px #000000;
-  grid-area: 1 / 1 / 3 / 10;
 }
 
 .header {
