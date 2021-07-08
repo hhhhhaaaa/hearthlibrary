@@ -1,8 +1,13 @@
 import React from "react";
+import Container from "../components/Container/Container";
 
 /**
  *
  */
 export default function login() {
-  return <h2>Login</h2>;
+  return (
+    <Container>
+      <h2>Login</h2>;
+    </Container>
+  );
 }

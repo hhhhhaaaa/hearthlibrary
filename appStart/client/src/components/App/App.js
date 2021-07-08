@@ -18,7 +18,6 @@ import Recipe from "../../pages/Recipe";
 import RecipeForm from "../../pages/RecipeForm";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 
 import history from "../History/history";
 
@@ -64,7 +63,6 @@ function App() {
         <Route exact path="/newRecipe" component={RecipeForm} />
         <Route exact path="/search" component={Results} />
       </Switch>
-      <Footer />
     </Router>
   );
 }

@@ -24,7 +24,7 @@
   justify-content:center;
   padding: 50px 0px;
   display: flex;
-  background-color: blue;
+  background-color: #8A8A8A;
   color: white;
   
 }
@@ -53,10 +53,6 @@
   -webkit-text-stroke-color: black
   
  
-}
-.span {
-  font-weight: bold;
-  color:#ffcccc;
 }
 
 .Catogary{

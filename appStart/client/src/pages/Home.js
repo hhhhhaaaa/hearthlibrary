@@ -3,7 +3,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
 import Container from "../components/Container/Container";
 import Row from "../components/Row/Row";
 import Col from "../components/Col/Col";
@@ -34,9 +33,16 @@ export default function Home() {
           <Col size="md-6">
             <div>
               <div className="card-body">
-                <h4 className="card-title text-center">Random Recipe!</h4>
-                <h1 className="text-center">{crazyRandomRecipe.title}</h1>
-                <p className="card-text py-5">
+                <h4 className="text-center textSubtle">Random Recipe!</h4>
+                <h1>
+                  <Link
+                    className="textColor"
+                    to={`/recipes/${crazyRandomRecipe.title}`}
+                  >
+                    {crazyRandomRecipe.title}
+                  </Link>
+                </h1>
+                <p className="card-text textSubtle py-5">
                   {crazyRandomRecipe.description}
                 </p>
               </div>
@@ -55,18 +61,16 @@ export default function Home() {
         </Row>
         <Row>
           <Col size="md-4">
-            <h4 className="py-2 text-center"> Recent Recipes List</h4>
+            <h4 className=" text-center textSubtle"> Recent Recipes List</h4>
             <ul>
               {recentRecipesArray.map((item, index) => (
                 <div key={index}>
                   <li>
-                    <Link
-                      to={`/recipes/${item.title}`}
-                      className="button muted-button"
-                    >
+                    <Link className="textColor" to={`/recipes/${item.title}`}>
                       {item.title}
                     </Link>
                   </li>
+                  <br />
                 </div>
               ))}
             </ul>
@@ -77,8 +81,8 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <Container>
       <SVG />
-    </div>
+    </Container>
   );
 }

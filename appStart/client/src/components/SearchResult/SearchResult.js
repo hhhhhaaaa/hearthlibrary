@@ -13,10 +13,10 @@ function SearchResult() {
     <ul>
       {recipeResults[0].map((result, index) => (
         <div key={index}>
-          <li>{result.title}</li>
-          <li>{result.description}</li>
-          <li>{result.Ingredients}</li>
-          <Link to={`/recipes/${result.title}`} className="button muted-button">
+          <li className="textSubtle">{result.title}</li>
+          <li className="textSubtle">{result.description}</li>
+          <li className="textSubtle">{result.Ingredients}</li>
+          <Link to={`/recipes/${result.title}`} className="textColor">
             View Post
           </Link>
         </div>
