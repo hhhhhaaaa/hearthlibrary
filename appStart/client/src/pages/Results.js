@@ -71,6 +71,7 @@ function Results() {
 
   if (recipeResults.length <= 0) {
     return (
+      <div className= "Search-form">
       <div className="input-group  w-50">
         <input
           type="text"
@@ -84,17 +85,20 @@ function Results() {
           <button className="btn btn-dark" onClick={handleFormSubmit}>
             Search Recipe
           </button>
-        </div>
-        <h2>No Results; Search Above</h2>
+        </div>       
       </div>
+      </div>
+
     );
   }
 
   return (
-    <div className="input-group  w-50">
+    <div>
+      <div className="Search-form">
+    <div className="input-group w-50">
       <input
         type="text"
-        className="form-control"
+        className="form-control  "
         placeholder="Search For Recipe...."
         value={search}
         // eslint-disable-next-line react/prop-types
@@ -104,10 +108,18 @@ function Results() {
         <button className="btn btn-dark" onClick={handleFormSubmit}>
           Search Recipe
         </button>
-      </div>
-      <h2>Results</h2>
-      {recipeList}
+      </div>  
     </div>
+    </div>
+    <div className="Search-Result">
+    <h2 className ="Search-h2">Results</h2>
+      {recipeList}
+
+</div>
+    </div>
+
+
+
   );
 }
 

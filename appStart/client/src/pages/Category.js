@@ -50,10 +50,10 @@ function Recipe() {
             <ul>
               <li>
                 <h1>{category}</h1>
-                <h2>Recipes</h2>
+                <h2 >Recipes</h2>
                 {recipeFix.map((result, index) => (
                   <div key={index}>
-                    <li>{result.title}</li>
+                    <li >{result.title}</li>
                     <li>{result.description}</li>
                     <li>{result.Ingredients}</li>
                     <Link

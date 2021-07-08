@@ -7,6 +7,58 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 
+.Search-form{
+  align-items: center;
+  justify-content:center;
+  padding: 50px 0px;
+  display: flex;
+  background-color: #8A8A8A;
+  
+}
+
+.Search-Result{
+  align-items: center;
+  justify-content:center;
+  padding: 50px 0px;
+  display: flex;
+  background-color: blue;
+  color: white;
+  
+}
+.Search-h2{
+  text-align:center;
+  padding-right: 20px;
+}
+
+
+.menu{
+  color: white; 
+  background-color: #282c34;
+  font-style: italic;
+}
+
+.about{
+  /* background-image: url("../../pages/image/image2.jpg"); */
+  background-repeat: no-repeat,repeat;
+  background-position: center;
+  background-size: 100%;
+  font-weight: bold;
+  background-color: brown;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black
+  
+ 
+}
+.span {
+  font-weight: bold;
+  color:#ffcccc;
+}
+
+.Catogary{
+  text-align: center;
+}
