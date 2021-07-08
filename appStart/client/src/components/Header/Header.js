@@ -14,7 +14,7 @@ function Header() {
   // eslint-disable-next-line keyword-spacing
 
   return (
-    <div className="header">
+    <div className="borderBottom">
       <h1>
         <Link
           to="/"

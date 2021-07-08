@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import SVG from "../components/SVG/SVG";
+import Container from "../components/Container/Container";
 
 /**
  *
@@ -46,27 +47,29 @@ function Recipe() {
         // eslint-disable-next-line prefer-destructuring
 
         return (
-          <div>
-            <ul>
-              <li>
-                <h1>{category}</h1>
-                <h2 >Recipes</h2>
-                {recipeFix.map((result, index) => (
-                  <div key={index}>
-                    <li >{result.title}</li>
-                    <li>{result.description}</li>
-                    <li>{result.Ingredients}</li>
-                    <Link
-                      to={`/recipes/${result.title}`}
-                      className="button muted-button"
-                    >
-                      View Post
-                    </Link>
-                  </div>
-                ))}
-              </li>
-            </ul>
-          </div>
+          <Container>
+            <div>
+              <ul>
+                <li>
+                  <h1>{category}</h1>
+                  <h2>Recipes</h2>
+                  {recipeFix.map((result, index) => (
+                    <div key={index}>
+                      <li>{result.title}</li>
+                      <li>{result.description}</li>
+                      <li>{result.Ingredients}</li>
+                      <Link
+                        to={`/recipes/${result.title}`}
+                        className="button muted-button"
+                      >
+                        View Post
+                      </Link>
+                    </div>
+                  ))}
+                </li>
+              </ul>
+            </div>
+          </Container>
         );
       }
     }
@@ -75,9 +78,9 @@ function Recipe() {
   }
 
   return (
-    <div>
+    <Container>
       <SVG />
-    </div>
+    </Container>
   );
 }
 export default Recipe;
