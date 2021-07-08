@@ -8,8 +8,6 @@ import { useDispatch } from "react-redux";
 import { recipeFound } from "../../features/Recipes/recipeSlice";
 import axios from "axios";
 // Only visible when logged in
-import Dashboard from "../Dashboard/Dashboard";
-import Preferences from "../Preferences/Preferences";
 import Home from "../../pages/Home";
 import Categories from "../../pages/Categories";
 import Login from "../../pages/Login/Login";
@@ -22,7 +20,6 @@ import Recipe from "../../pages/Recipe";
 import RecipeForm from "../../pages/RecipeForm";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
-import useToken from "./useToken";
 import { useToken } from "../../pages/Login/Login";
 
 import history from "../History/history";
@@ -31,12 +28,13 @@ import history from "../History/history";
  *
  */
 
-
 function App() {
   const dispatch = useDispatch();
 
-    return <Login setToken={setToken} />
   if (!token) {
+    return <Login setToken={setToken} />;
+  }
+
   /**
    *
    */
@@ -69,7 +67,10 @@ function App() {
         <Route path="/categories/:category" component={Category} />;
         <Route exact path="/recipes" component={Recipes} />
         <Route path="/recipes/:title" component={Recipe} />;
-        <Route exact path="/login" > <Login setToken={useToken}> </Login></Route >
+        <Route exact path="/login">
+          {" "}
+          <Login setToken={useToken}> </Login>
+        </Route>
         <Route exact path="/newRecipe" component={RecipeForm} />
         <Route exact path="/search" component={Results} />
       </Switch>
