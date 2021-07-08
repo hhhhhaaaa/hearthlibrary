@@ -45,6 +45,24 @@ const Navbar = () => {
             New Recipe
           </Link>
         </li>
+        <br />
+        <li className="nav-item">
+          <Link to="/login" className="textColor">
+            Login
+          </Link>
+        </li>
+        <br />
+        <li className="nav-item">
+          <Link to="/signup" className="textColor">
+            New Users
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/api/user/logout" className="textColor">
+            Logoff
+          </Link>
+        </li>
+        ;
       </ul>
     </nav>
   );

@@ -1,52 +1,88 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import history from "../components/History/history";
 import Container from "../components/Container/Container";
 
 /**
  *
  */
-async function loginUser(credentials) {
-  return fetch("http://localhost:3000/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
-}
+function Login() {
+  const user = useSelector((state) => state.user);
 
-export default function Login({ setToken }) {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  // eslint-disable-next-line prefer-destructuring
+  const userArray = user[0];
 
-  const handleSubmit =async e => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    const { name } = event.target;
+
+    switch (name) {
+      case "username":
+        setUsername(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const usernameArray = userArray.map((item) => {
+      return item.username;
     });
-    setToken(token);
-  }
-    return(
-      <div className= "login-wrapper">
-      <h1>Please Login!</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-            <p>Username</p>
-            <input type="text" onChange ={e => setUsername(e.target.value)} />
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" onChange ={e => setPassword(e.target.value)} />
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-      </div>
-    )  
+
+    if (usernameArray.includes(username)) {
+      await axios
+        .post("api/user/login", {
+          username,
+          password
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      history.push(`/recipes`);
+    }
+  };
+
+  const formText = (
+    <div>
+      <label className="textColor">Username</label>
+      <textarea
+        className="textSubtle"
+        name="username"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Enter Your Username"
+      ></textarea>
+      <br />
+      <label className="textColor">Password</label>
+      <textarea
+        className="textSubtle"
+        name="password"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Enter Your Password"
+      ></textarea>
+      <button className="btn btn-dark" onClick={handleFormSubmit}>
+        Submit Recipe
+      </button>
+    </div>
+  );
+
+  return (
+    <Container>
+      <form>{formText}</form>
+    </Container>
+  );
 }
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
+export default Login;
