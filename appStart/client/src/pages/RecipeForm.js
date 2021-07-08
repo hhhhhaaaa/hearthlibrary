@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import SubmitFormErrors from "../components/SubmitFormErrors/submitFormErrors";
 import axios from "axios";
 import history from "../components/History/history";
+import imageValidation from "../tools/imageValidation.js";
 
 /**
  *
@@ -23,6 +24,7 @@ function RecipeForm() {
   const [notes, setNotes] = useState("");
   const [sources, setSources] = useState("");
   const [category, setCategory] = useState("");
+  const [picture, setPicture] = useState("");
   const [formErrors, setFormErrors] = useState([]);
   const [titleValid, setTitleValid] = useState(false);
   const [descriptionValid, setDescriptionValid] = useState(false);
@@ -64,6 +66,7 @@ function RecipeForm() {
     const categoryIncluded = categoryArray.indexOf(value) !== -1;
     const categoryText =
       "Invalid Category (Appetizers, Beverages, Bread, Casserole, Dessert, Entree, Meat, Miscellaneous, Poultry, Salad, Seafood, Sides, Soup, Veggies)";
+
     const trueArray = [
       titleValid,
       descriptionValid,
@@ -269,6 +272,13 @@ function RecipeForm() {
         fieldErrors("category", value);
         setCategory(value);
         break;
+      case "picture":
+        // eslint-disable-next-line no-case-declarations
+        const image = imageValidation(value);
+
+        setPicture(image);
+
+        break;
       default:
         break;
     }
@@ -300,7 +310,8 @@ function RecipeForm() {
             steps: formatSt,
             notes: formatN,
             sources: formatSo,
-            category
+            category,
+            picture
           })
           .catch((error) => {
             console.log(error);
@@ -391,6 +402,14 @@ function RecipeForm() {
         type="text"
         placeholder="Enter the Category of the Recipe"
       ></textarea>
+      <br />
+      <label>Picture</label>
+      <textarea
+        name="picture"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Enter A Link To The Picture of the Recipe"
+      ></textarea>
       <button className="btn btn-dark" onClick={handleFormSubmit}>
         Submit Recipe
       </button>
@@ -431,6 +450,8 @@ function RecipeForm() {
             Bread, Casserole, Dessert, Entree, Meat, Miscellaneous, Poultry,
             <br />
             Salad, Seafood, Sides, Soup, Veggies
+            <br />
+            Picture: Link from Imgur
           </p>
         </div>
         {formText}

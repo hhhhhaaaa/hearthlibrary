@@ -1,14 +1,12 @@
 /* eslint-disable no-unmodified-loop-condition */
 /* eslint-disable no-unused-vars */
-import React, { Component } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Container from "../components/Container/Container";
 import Row from "../components/Row/Row";
 import Col from "../components/Col/Col";
-import Card from "../components/Card/Card";
-import image1 from "./image1.jpg";
 import SVG from "../components/SVG/SVG";
 
 /**
@@ -46,7 +44,10 @@ export default function Home() {
           <Col size="md-6">
             <div className="card">
               <div className="img-container">
-                <img src={image1} className="img-fluid image-resize"></img>
+                <img
+                  src={`${crazyRandomRecipe.picture}.jpg`}
+                  className="img-fluid image-resize"
+                ></img>
               </div>
             </div>
           </Col>
