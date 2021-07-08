@@ -13,7 +13,7 @@ function Categories() {
     return (
       <Container>
         <div>
-          <h2 className="text-center"> The Recipe Categories</h2>
+          <h2 className="text-center textColor"> The Recipe Categories</h2>
           <ol>
             <br />
             <li>
