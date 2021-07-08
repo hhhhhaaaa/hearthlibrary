@@ -55,12 +55,12 @@ function Recipe() {
                   <h2>Recipes</h2>
                   {recipeFix.map((result, index) => (
                     <div key={index}>
-                      <li>{result.title}</li>
-                      <li>{result.description}</li>
-                      <li>{result.Ingredients}</li>
+                      <li className="textSubtle">{result.title}</li>
+                      <li className="textSubtle">{result.description}</li>
+                      <li className="textSubtle">{result.Ingredients}</li>
                       <Link
                         to={`/recipes/${result.title}`}
-                        className="button muted-button"
+                        className="textColor"
                       >
                         View Post
                       </Link>
