@@ -27,6 +27,9 @@ app.use(
     }
   })
 );
+
+app.use(express.static(path.join(__dirname)));
+app.use(express.static(root));
 app.use((req, res, next) => {
   if (req.cookies.user_sid && !req.session.user) {
     res.clearCookie("user_sid");
@@ -43,13 +46,11 @@ const sessionChecker = (req, res, next) => {
   return next();
 };
 
+app.use(routes);
+
 app.get("/", sessionChecker, (req, res) => {
   res.redirect("/login");
 });
-app.use(routes);
-
-app.use(express.static(path.join(__dirname)));
-app.use(express.static(root));
 
 app.get("*", (req, res) => {
   res.sendFile("index.html", { root });
