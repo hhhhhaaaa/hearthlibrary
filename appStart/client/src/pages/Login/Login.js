@@ -5,15 +5,37 @@ import "./login.css";
 /**
  *
  */
+
 async function loginUser(credentials) {
-  return fetch("http://localhost:3000/login", {
+  return fetch("http://localhost:3001/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(credentials)
   })
-    .then(data => data.json())
+    .then(data => data.json());
+}
+
+function useToken() {
+  const getToken = () => {
+      const tokenString = localStorage.getItem("token");
+      const userToken = JSON.parse(tokenString);
+
+      return userToken?.token
+  };
+
+  const [token, setToken] = useState(getToken());
+
+  const saveToken = userToken => {
+      localStorage.setItem("token", JSON.stringify(userToken));
+      setToken(userToken.token);
+  };
+
+  return {
+      setToken: saveToken,
+      token
+  }
 }
 
 export default function Login({ setToken }) {
@@ -26,10 +48,11 @@ export default function Login({ setToken }) {
       username,
       password
     });
-    setToken(token);
-  }
 
-    return(
+    setToken(token)
+  };
+
+    return (
       <div className= "login-wrapper">
       <h2>Please Login!</h2>
       <form onSubmit={handleSubmit}>
@@ -42,7 +65,7 @@ export default function Login({ setToken }) {
           <input type="password" onChange ={e => setPassword(e.target.value)} />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="login">Login</button>
         </div>
         <div>
           <button type="createAccount">Create Account</button>
