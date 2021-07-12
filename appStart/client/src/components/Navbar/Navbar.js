@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 // eslint-disable-next-line space-before-blocks
@@ -7,75 +7,62 @@ import "./Navbar.css";
  *
  */
 const Navbar = () => {
-  const location = useLocation();
-
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <nav className="navbar navbar-expand-sm navbar-light bg-light borderBottom">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link
-            to="/"
-            className={
-              location.pathname === "/" ? "nav-link active" : "nav-link"
-            }
-          >
+          <Link to="/" className="textColor">
             Home
           </Link>
         </li>
+        <br />
         <li className="nav-item">
-          <Link
-            to="/about"
-            className={
-              location.pathname === "/about" ? "nav-link active" : "nav-link"
-            }
-          >
+          <Link to="/about" className="textColor">
             About
           </Link>
         </li>
+        <br />
         <li className="nav-item ">
-          <Link
-            to="/categories"
-            className={
-              location.pathname === "/categories"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
+          <Link to="/categories" className="textColor">
             Categories
           </Link>
         </li>
+        <br />
         <li className="nav-item ">
-          <Link
-            to="/recipes"
-            className={
-              location.pathname === "/recipes" ? "nav-link active" : "nav-link"
-            }
-          >
+          <Link to="/recipes" className="textColor">
             Recipes
           </Link>
         </li>
+        <br />
         <li className="nav-item ">
-          <Link
-            to="/search"
-            className={
-              location.pathname === "/search" ? "nav-link active" : "nav-link"
-            }
-          >
+          <Link to="/search" className="textColor">
             Search
           </Link>
         </li>
+        <br />
         <li className="nav-item">
-          <Link
-            to="/newRecipe"
-            className={
-              location.pathname === "/newRecipe"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
+          <Link to="/newRecipe" className="textColor">
             New Recipe
           </Link>
         </li>
+        <br />
+        <li className="nav-item">
+          <Link to="/login" className="textColor">
+            Login
+          </Link>
+        </li>
+        <br />
+        <li className="nav-item">
+          <Link to="/signup" className="textColor">
+            New Users
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/api/user/logout" className="textColor">
+            Logoff
+          </Link>
+        </li>
+        ;
       </ul>
     </nav>
   );

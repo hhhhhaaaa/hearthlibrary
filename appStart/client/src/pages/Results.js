@@ -6,7 +6,7 @@ import {
   recipeResultsFound,
   recipeResultsClear
 } from "../features/RecipeResults/recipeResultsSlice";
-
+import Container from "../components/Container/Container";
 import axios from "axios";
 let recipeArray = [];
 
@@ -71,55 +71,50 @@ function Results() {
 
   if (recipeResults.length <= 0) {
     return (
-      <div className= "Search-form">
-      <div className="input-group  w-50">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search For Recipe...."
-          value={search}
-          // eslint-disable-next-line react/prop-types
-          onChange={handleInputChange}
-        />
-        <div className="input-group-append">
-          <button className="btn btn-dark" onClick={handleFormSubmit}>
-            Search Recipe
-          </button>
-        </div>       
-      </div>
-      </div>
-
+      <Container>
+        <div className="input-group  w-50">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search For Recipe...."
+            value={search}
+            // eslint-disable-next-line react/prop-types
+            onChange={handleInputChange}
+          />
+          <div className="input-group-append">
+            <button className="btn btn-dark" onClick={handleFormSubmit}>
+              Search Recipe
+            </button>
+          </div>
+        </div>
+      </Container>
     );
   }
 
   return (
-    <div>
+    <Container>
       <div className="Search-form">
-    <div className="input-group w-50">
-      <input
-        type="text"
-        className="form-control  "
-        placeholder="Search For Recipe...."
-        value={search}
-        // eslint-disable-next-line react/prop-types
-        onChange={handleInputChange}
-      />
-      <div className="input-group-append">
-        <button className="btn btn-dark" onClick={handleFormSubmit}>
-          Search Recipe
-        </button>
-      </div>  
-    </div>
-    </div>
-    <div className="Search-Result">
-    <h2 className ="Search-h2">Results</h2>
-      {recipeList}
-
-</div>
-    </div>
-
-
-
+        <div className="input-group w-50">
+          <input
+            type="text"
+            className="form-control  "
+            placeholder="Search For Recipe...."
+            value={search}
+            // eslint-disable-next-line react/prop-types
+            onChange={handleInputChange}
+          />
+          <div className="input-group-append">
+            <button className="btn btn-dark" onClick={handleFormSubmit}>
+              Search Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="searchResult">
+        <h2 className="Search-h2 textColor">Results</h2>
+        {recipeList}
+      </div>
+    </Container>
   );
 }
 

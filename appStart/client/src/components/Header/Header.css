@@ -3,9 +3,8 @@
 .page-title:hover,
 .page-title:visited,
 .page-title:active {
-  display: grid;
   padding: 0.5rem;
-  color: #bd8f00;
+  color: #FCA311;
   width: 100%;
   font-family: "Cheque-Regular";
   src: url("Cheque-Regular.ttf") format("truetype");
@@ -14,10 +13,7 @@
   text-align: center;
   align-items: center;
   text-shadow: -6px 6px #000000;
-  grid-area: 1 / 1 / 3 / 10;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
-.header {
-  border: 3px solid black;
-  background-color: #8a8a8a;
-}

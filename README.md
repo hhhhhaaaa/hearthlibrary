@@ -2,7 +2,7 @@
 A Family Recipe app used to help relocate family recipes to digital spaces.
 
 ### Table of Contents
- * [Descritption](#description)
+ * [Description](#description)
  * [Technologies-Used](#technologies-used)
  * [Installation](#installation)
  * [Usage](#usage)
@@ -41,7 +41,7 @@ A Family Recipe app used to help relocate family recipes to digital spaces.
 
 
  ## Installation
-The application can be viewed live on Heroku here:[Hearthlibrary](The Link)
+The application can be viewed live on Heroku here:[Hearthlibrary](https://hearth-library.herokuapp.com/login)
 
 
   Open the web browser and typehttp://localhost:3000 in the address bar to load the application

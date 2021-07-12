@@ -10,39 +10,36 @@
   padding: 50px 0px;
 }
 
-.Search-form{
+.Search-form {
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   padding: 50px 0px;
   display: flex;
-  background-color: #8A8A8A;
-  
+  background-color: #8a8a8a;
 }
 
-.Search-Result{
+.Search-Result {
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   padding: 50px 0px;
   display: flex;
-  background-color: blue;
+  background-color: #8a8a8a;
   color: white;
-  
 }
-.Search-h2{
-  text-align:center;
+.Search-h2 {
+  text-align: center;
   padding-right: 20px;
 }
 
-
-.menu{
-  color: white; 
+.menu {
+  color: white;
   background-color: #282c34;
   font-style: italic;
 }
 
-.about{
+.about {
   /* background-image: url("../../pages/image/image2.jpg"); */
-  background-repeat: no-repeat,repeat;
+  background-repeat: no-repeat, repeat;
   background-position: center;
   background-size: 100%;
   font-weight: bold;
@@ -50,15 +47,16 @@
   color: black;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black
-  
- 
-}
-.span {
-  font-weight: bold;
-  color:#ffcccc;
+  -webkit-text-stroke-color: black;
 }
 
-.Catogary{
+.Catogary {
   text-align: center;
+}
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(248, 189, 28);
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import SVG from "../components/SVG/SVG";
-import "./Recipe.css";
+import Container from "../components/Container/Container";
 
 /**
  *
@@ -54,62 +54,80 @@ function Recipe() {
       };
 
       return (
-        <div>
+        <Container>
           <ul>
             <li>
-              <h2>Title</h2>
-              <p>{rec.title}</p>
+              <h2 className="textColor">Title</h2>
+              <p className="textSubtle">{rec.title}</p>
             </li>
             <li>
-              <h2>Picture</h2>
+              <h2 className="textColor">Picture</h2>
               <img src={`${rec.picture}.jpg`} />
             </li>
             <li>
-              <h2>Description </h2>
-              <p>{rec.description}</p>
+              <h2 className="textColor">Description </h2>
+              <p className="textSubtle">{rec.description}</p>
             </li>
             <li>
-              <h2>Before You Begin</h2>
-              <div dangerouslySetInnerHTML={beforeMark()}></div>
+              <h2 className="textColor">Before You Begin</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={beforeMark()}
+              ></div>
             </li>
             <li>
-              <h2>Time</h2>
-              <div dangerouslySetInnerHTML={timMark()}></div>
+              <h2 className="textColor">Time</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={timMark()}
+              ></div>
             </li>
             <li>
-              <h2>Yield</h2>
-              <p>{rec.yields}</p>
+              <h2 className="textColor">Yield</h2>
+              <p className="textSubtle">{rec.yields}</p>
             </li>
             <li>
-              <h2>Ingredients</h2>
-              <div dangerouslySetInnerHTML={ingMark()}></div>
+              <h2 className="textColor">Ingredients</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={ingMark()}
+              ></div>
             </li>
             <li>
-              <h2>Steps</h2>
-              <div dangerouslySetInnerHTML={stepMark()}></div>
+              <h2 className="textColor">Steps</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={stepMark()}
+              ></div>
             </li>
             <li>
-              <h2>Notes</h2>
-              <div dangerouslySetInnerHTML={nottingMark()}></div>
+              <h2 className="textColor">Notes</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={nottingMark()}
+              ></div>
             </li>
             <li>
-              <h2>Sources</h2>
-              <div dangerouslySetInnerHTML={soreMark()}></div>
+              <h2 className="textColor">Sources</h2>
+              <div
+                className="textSubtle"
+                dangerouslySetInnerHTML={soreMark()}
+              ></div>
             </li>
             <li>
-              <h2>Category</h2>
-              <p>{rec.category}</p>
+              <h2 className="textColor">Category</h2>
+              <p className="textSubtle">{rec.category}</p>
             </li>
           </ul>
-        </div>
+        </Container>
       );
     }
   }
 
   return (
-    <div>
+    <Container>
       <SVG />
-    </div>
+    </Container>
   );
 }
 export default Recipe;

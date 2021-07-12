@@ -5,6 +5,7 @@ import SubmitFormErrors from "../components/SubmitFormErrors/submitFormErrors";
 import axios from "axios";
 import history from "../components/History/history";
 import imageValidation from "../tools/imageValidation.js";
+import Container from "../components/Container/Container";
 
 /**
  *
@@ -78,11 +79,8 @@ function RecipeForm() {
     ];
 
     const formValidation = () => {
-      console.log(trueArray);
       if (
         trueArray.every((item) => {
-          console.log("test");
-          console.log(item);
           if (item) {
             return true;
           }
@@ -323,88 +321,99 @@ function RecipeForm() {
 
   const formText = (
     <div>
-      <label>Title</label>
+      <label className="textColor">Title</label>
       <textarea
+        className="textSubtle"
         name="title"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Title of the Recipe"
       ></textarea>
       <br />
-      <label>Description</label>
+      <label className="textColor">Description</label>
       <textarea
+        className="textSubtle"
         name="description"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Description of the Recipe"
       ></textarea>
       <br />
-      <label>Before You Begin</label>
+      <label className="textColor">Before You Begin</label>
       <textarea
+        className="textSubtle"
         name="before"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter Any Pressing Details"
       ></textarea>
       <br />
-      <label>Time</label>
+      <label className="textColor">Time</label>
       <textarea
+        className="textSubtle"
         name="time"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Title of the Recipe"
       ></textarea>
       <br />
-      <label>Yields</label>
+      <label className="textColor">Yields</label>
       <textarea
+        className="textSubtle"
         name="yeld"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Approximate Output of the Recipe"
       ></textarea>
       <br />
-      <label>Ingredients</label>
+      <label className="textColor">Ingredients</label>
       <textarea
+        className="textSubtle"
         name="ingredients"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Ingredients"
       ></textarea>
       <br />
-      <label>Steps</label>
+      <label className="textColor">Steps</label>
       <textarea
+        className="textSubtle"
         name="steps"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Steps of the Recipe"
       ></textarea>
       <br />
-      <label>Notes</label>
+      <label className="textColor">Notes</label>
       <textarea
+        className="textSubtle"
         name="notes"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter Any Notes Or Cool Information"
       ></textarea>
       <br />
-      <label>Sources</label>
+      <label className="textColor">Sources</label>
       <textarea
+        className="textSubtle"
         name="sources"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter Where the Recipe is From and/or the Creator(s)"
       ></textarea>
       <br />
-      <label>Category</label>
+      <label className="textColor">Category</label>
       <textarea
+        className="textSubtle"
         name="category"
         onChange={handleInputChange}
         type="text"
         placeholder="Enter the Category of the Recipe"
       ></textarea>
       <br />
-      <label>Picture</label>
+      <label className="textColor">Picture</label>
       <textarea
+        className="textSubtle"
         name="picture"
         onChange={handleInputChange}
         type="text"
@@ -418,25 +427,25 @@ function RecipeForm() {
 
   if (formErrors.length >= 1) {
     return (
-      <div>
+      <Container>
         <form>
-          <h1>Create A New Recipe</h1>
-          <div>
+          <h1 className="textColor">Create A New Recipe</h1>
+          <div className="textColor">
             <SubmitFormErrors formErrors={formErrors} />
           </div>
           {formText}
         </form>
-      </div>
+      </Container>
     );
   }
 
   return (
-    <div>
+    <Container>
       <form>
-        <h1>Create A New Recipe</h1>
+        <h1 className="textColor">Create A New Recipe</h1>
         <div>
-          <h3>Requirements</h3>
-          <p>
+          <h3 className="textColor">Requirements</h3>
+          <p className="textSubtle">
             Title: Greater than/equal to 5 and less than/equal to 150 characters
             <br />
             Description: Greater than 30 and less than 300 characters
@@ -456,7 +465,7 @@ function RecipeForm() {
         </div>
         {formText}
       </form>
-    </div>
+    </Container>
   );
 }
 

@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
  * @param props.formErrors
  */
 function SubmitFormErrors({ formErrors }) {
-  console.log(formErrors);
-
   if (formErrors.length === 1) {
     return (
       <div>

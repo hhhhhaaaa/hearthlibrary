@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Container from "../components/Container/Container";
 import { Bars } from "svg-loaders-react";
 
 /**
@@ -10,60 +11,104 @@ function Categories() {
 
   if (recipe !== null && recipe.length >= 1) {
     return (
-      <div className ="menu">
-        <h2 className="text-center"> The Recipe Categories</h2>
-        <ol className="span mr-3">
-          <li >
-            <a href={`/categories/Appetizers`}><span className="span" > Appetizers</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Beverages`}><span className="span" >Beverages</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Bread`}><span className="span" >Bread</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Casserole`}><span className="span" >Casserole</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Dessert`}><span className="span" >Dessert</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Entree`}><span className="span" >Entree</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Meat`}><span className="span" >Meat</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Miscellaneous`}><span className="span" >Miscellaneous</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Poultry`}><span className="span" >Poultry</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Salad`}><span className="span" >Salad</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Seafood`}><span className="span" >Seafood</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Sides`}><span className="span" >Sides</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Soup`}><span className="span" >Soup</span></a>
-          </li>
-          <li>
-            <a href={`/categories/Veggies`}><span className="span" >Veggies</span></a>
-          </li>
-        </ol>
-      </div>
+      <Container>
+        <div>
+          <h2 className="text-center textColor"> The Recipe Categories</h2>
+          <ol>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Appetizers`}>
+                <span> Appetizers</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Beverages`}>
+                <span>Beverages</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Bread`}>
+                <span>Bread</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Casserole`}>
+                <span>Casserole</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Dessert`}>
+                <span>Dessert</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Entree`}>
+                <span>Entree</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Meat`}>
+                <span>Meat</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Miscellaneous`}>
+                <span>Miscellaneous</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Poultry`}>
+                <span>Poultry</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Salad`}>
+                <span>Salad</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Seafood`}>
+                <span>Seafood</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Sides`}>
+                <span>Sides</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Soup`}>
+                <span>Soup</span>
+              </a>
+            </li>
+            <br />
+            <li>
+              <a className="textColor" href={`/categories/Veggies`}>
+                <span>Veggies</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </Container>
     );
   }
 
   return (
-    <div>
+    <Container>
       <Bars />;
-    </div>
+    </Container>
   );
 }
 
