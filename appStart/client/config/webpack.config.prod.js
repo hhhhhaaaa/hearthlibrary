@@ -13,6 +13,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 const jsTest = /(?<js>.js|.jsx|.mjs)$/u;
+const cssTest = /(?<css>.scss|.css)$/u;
 
 /* Webpack uses `publicPath` to determine where the app is being served from.
    It requires a trailing slash, or the file assets will get an incorrect path. */
@@ -180,8 +181,13 @@ module.exports = {
              use the "style" loader inside the async code so CSS from them won't be
              in the main CSS file. */
           {
-            test: /\.css$/u,
-            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+            test: cssTest,
+            use: [
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "postcss-loader",
+              "sass-loader"
+            ],
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
             exclude: ["/src/seed/"]
           }

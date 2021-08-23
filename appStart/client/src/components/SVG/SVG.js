@@ -12,7 +12,7 @@ import spinningcircles from "./svg-loaders/spinning-circles.svg";
 import tailspin from "./svg-loaders/tail-spin.svg";
 import threedots from "./svg-loaders/three-dots.svg";
 import history from "../History/history";
-import "./svg.css";
+import "./svg.scss";
 
 const loadersArray = [
   audio,

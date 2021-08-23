@@ -1,6 +1,10 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useSignIn } from "react-auth-kit";
+import auth from "../tools/auth";
 import axios from "axios";
 import history from "../components/History/history";
 import Container from "../components/Container/Container";
@@ -10,12 +14,22 @@ import Container from "../components/Container/Container";
  */
 function Login() {
   const user = useSelector((state) => state.user);
+  const signIn = useSignIn();
 
   // eslint-disable-next-line prefer-destructuring
   const userArray = user[0];
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [redirectToReferrer, setRedirectToReferrer] = React.useState(false);
+
+  const login = () => auth.authenticate(() => {
+      setRedirectToReferrer(true);
+    });
+
+  if (redirectToReferrer === true) {
+    return <Redirect to={state?.from || "/"} />;
+  }
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -36,9 +50,13 @@ function Login() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log("Submit");
     const usernameArray = userArray.map((item) => {
       return item.username;
     });
+
+    const { value } = event.target;
+    const { name } = event.target;
 
     if (usernameArray.includes(username)) {
       await axios
@@ -46,10 +64,39 @@ function Login() {
           username,
           password
         })
+        .then((res) => {
+          console.log("response");
+          console.log(res);
+          if (res.status === 200) {
+            if (
+              signIn({
+                token: res.data.token,
+                expiresIn: res.data.expiresIn,
+                tokenType: "Bearer",
+                authState: res.data.authUserState
+              })
+            ) {
+              login();
+              switch (name) {
+                case "username":
+                  setUsername(value);
+                  break;
+                case "password":
+                  setPassword(value);
+                  break;
+                default:
+                  break;
+              }
+            } else {
+              console.log("Incorrect Login Credentials");
+            }
+          }
+        })
         .catch((error) => {
           console.log(error);
         });
-      history.push(`/recipes`);
+
+      history.push(`/newRecipe`);
     }
   };
 

@@ -18,10 +18,11 @@ import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
-import { AuthProvider, PrivateRoute } from "react-auth-kit";
+import { AuthProvider } from "react-auth-kit";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import history from "../History/history";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App.scss";
 
 /**
  *
@@ -66,25 +67,63 @@ function App() {
   return (
     <AuthProvider
       authType={"cookie"}
-      authName={"_auth"}
+      authName={"auth"}
       cookieDomain={window.location.hostname}
       cookieSecure={window.location.protocol === "https:"}
       refreshToken
     >
       <Router history={history}>
-        <Header />
-        <Navbar />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/categories" component={Categories} />
-          <Route path="/categories/:category" component={Category} />;
-          <Route exact path="/recipes" component={Recipes} />
-          <Route path="/recipes/:title" component={Recipe} />;
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <PrivateRoute exact path="/newRecipe" component={RecipeForm} />
-          <Route exact path="/search" component={Results} />
+          <Route exact path="/">
+            <Header />
+            <Navbar />
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <Header />
+            <Navbar />
+            <About />
+          </Route>
+          <Route exact path="/categories">
+            <Header />
+            <Navbar />
+            <Categories />
+          </Route>
+          <Route exact path="/categories/:category">
+            <Header />
+            <Navbar />
+            <Category />
+          </Route>
+          <Route exact path="/recipes">
+            <Header />
+            <Navbar />
+            <Recipes />
+          </Route>
+          <Route exact path="/recipes/:title">
+            <Header />
+            <Navbar />
+            <Recipe />
+          </Route>
+          <Route exact path="/login">
+            <Header />
+            <Navbar />
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Header />
+            <Navbar />
+            <Signup />
+          </Route>
+          <PrivateRoute path={"/newRecipe"} loginPath={"/login"} exact>
+            <Header />
+            <Navbar />
+            <RecipeForm />
+          </PrivateRoute>
+          <Route exact path="/search">
+            <Header />
+            <Navbar />
+            <Results />
+          </Route>
         </Switch>
       </Router>
     </AuthProvider>

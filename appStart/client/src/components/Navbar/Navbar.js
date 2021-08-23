@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { useSignOut } from "react-auth-kit";
+import auth from "../../tools/auth";
+
+import "./Navbar.scss";
 
 // eslint-disable-next-line space-before-blocks
 /**
  *
  */
 const Navbar = () => {
+  const signOut = useSignOut();
+
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light borderBottom">
       <ul className="navbar-nav">
@@ -58,11 +63,19 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/api/user/logout" className="textColor">
+          <button
+            onClick={() => {
+              console.log("Test");
+              signOut();
+              auth.signout();
+              location.replace("/logout");
+              location.replace("/");
+            }}
+            className="textColor"
+          >
             Logoff
-          </Link>
+          </button>
         </li>
-        ;
       </ul>
     </nav>
   );

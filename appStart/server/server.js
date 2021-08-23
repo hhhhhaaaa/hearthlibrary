@@ -16,17 +16,18 @@ app.use(express.json());
 
 app.use(morgan("dev"));
 app.use(cookieParser());
-app.use(
-  session({
-    key: "user_sid",
-    secret: "Secret Unnel",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      expires: 600000
-    }
-  })
-);
+
+const auth = {
+  key: "user_sid",
+  secret: "Secret Unnel",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000
+  }
+};
+
+app.use(session(auth));
 
 app.use(express.static(path.join(__dirname)));
 app.use(express.static(root));
@@ -37,24 +38,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const sessionChecker = (req, res, next) => {
-  if (req.session.user && req.cookies_user_sid) {
-    return res.redirect("/");
-  }
-  console.log(req.session);
-
-  return next();
-};
-
 app.use(routes);
-
-app.get("/", sessionChecker, (req, res) => {
-  res.redirect("/login");
-});
-
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root });
-});
 
 InitiateMongoServer();
 

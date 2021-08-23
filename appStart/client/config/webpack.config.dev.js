@@ -12,6 +12,7 @@ const paths = require("./paths");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 const jsTest = /(?<js>.js|.jsx|.mjs)$/u;
+const cssTest = /(?<css>.scss|.css)$/u;
 
 /* Webpack uses `publicPath` to determine where the app is being served from.
    In development, we always serve from the root. This makes config easier. */
@@ -177,7 +178,7 @@ module.exports = {
              In production, we use a plugin to extract that CSS to a file, but
              in development "style" loader enables hot editing of CSS. */
           {
-            test: /\.css$/u,
+            test: cssTest,
             use: [
               "style-loader",
               {
@@ -209,7 +210,8 @@ module.exports = {
                     ]
                   }
                 }
-              }
+              },
+              "sass-loader"
             ],
             exclude: ["/src/seed/"]
           }

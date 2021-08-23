@@ -85,6 +85,8 @@
   },
   "devDependencies": {
     "dotenv-expand": "^5.1.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
     "terser-webpack-plugin": "^5.1.4"
   },
   "jest": {

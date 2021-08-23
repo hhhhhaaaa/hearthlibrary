@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Header.css";
+import "./Header.scss";
 
 // eslint-disable-next-line init-declarations
 
