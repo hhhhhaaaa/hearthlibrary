@@ -1,6 +1,6 @@
 /* eslint-disable init-declarations */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { recipeFound } from "../../features/Recipes/recipeSlice";
@@ -29,8 +29,6 @@ import "./App.scss";
  */
 function App() {
   const dispatch = useDispatch();
-
-  const [isAuthenticated, userHasAuthenticated] = useState(false);
 
   /**
    *

@@ -2,7 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { userAuthenticated } from "../features/Authenticate/authenticateSlice";
 import { useSignIn } from "react-auth-kit";
 import auth from "../tools/auth";
 import axios from "axios";
@@ -14,6 +15,9 @@ import Container from "../components/Container/Container";
  */
 function Login() {
   const user = useSelector((state) => state.user);
+  const authenticate = useSelector((state) => state.authenticate);
+  const dispatch = useDispatch();
+
   const signIn = useSignIn();
 
   // eslint-disable-next-line prefer-destructuring
@@ -59,6 +63,9 @@ function Login() {
     const { name } = event.target;
 
     if (usernameArray.includes(username)) {
+      dispatch(userAuthenticated());
+      console.log("Test");
+      console.log(authenticate);
       await axios
         .post("api/user/login", {
           username,
