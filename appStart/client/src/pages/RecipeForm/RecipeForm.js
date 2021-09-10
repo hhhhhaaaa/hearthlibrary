@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import SubmitFormErrors from "../components/SubmitFormErrors/submitFormErrors";
+import SubmitFormErrors from "../../components/SubmitFormErrors/submitFormErrors";
 import axios from "axios";
-import history from "../components/History/history";
-import imageValidation from "../tools/imageValidation.js";
-import Container from "../components/Container/Container";
+import history from "../../components/History/history";
+import imageValidation from "../../tools/imageValidation.js";
+import Container from "../../components/Container/Container";
 
 /**
  *

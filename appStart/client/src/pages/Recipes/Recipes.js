@@ -1,8 +1,8 @@
 /* eslint-disable prefer-destructuring */
 import React from "react";
 import { useSelector } from "react-redux";
-import SVG from "../components/SVG/SVG";
-import Container from "../components/Container/Container";
+import SVG from "../../components/SVG/SVG";
+import Container from "../../components/Container/Container";
 
 /**
  *

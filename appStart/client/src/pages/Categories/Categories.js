@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Container from "../components/Container/Container";
+import Container from "../../components/Container/Container";
 import { Bars } from "svg-loaders-react";
 
 /**

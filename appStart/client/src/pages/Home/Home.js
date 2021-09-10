@@ -3,10 +3,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Container from "../components/Container/Container";
-import Row from "../components/Row/Row";
-import Col from "../components/Col/Col";
-import SVG from "../components/SVG/SVG";
+import Container from "../../components/Container/Container";
+import Row from "../../components/Row/Row";
+import Col from "../../components/Col/Col";
+import SVG from "../../components/SVG/SVG";
 
 /**
  *

@@ -1,9 +1,9 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Container from "../components/Container/Container";
-import Row from "../components/Row/Row";
-import Col from "../components/Col/Col";
+import Container from "../../components/Container/Container";
+import Row from "../../components/Row/Row";
+import Col from "../../components/Col/Col";
 
 /**
  *

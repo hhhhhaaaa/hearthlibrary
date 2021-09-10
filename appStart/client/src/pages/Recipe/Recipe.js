@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import SVG from "../components/SVG/SVG";
-import Container from "../components/Container/Container";
+import SVG from "../../components/SVG/SVG";
+import Container from "../../components/Container/Container";
+
+import "./Recipe.scss";
 
 /**
  *
@@ -38,11 +40,31 @@ function Recipe() {
       };
 
       const ingMark = () => {
-        return { __html: rec.ingredients };
+        const ingredients = rec.ingredients.split("<br />");
+
+        const ingredientsList = ingredients
+          .map((item) => {
+            return `<li>
+          ${item}
+          </li>`;
+          })
+          .join("");
+
+        return { __html: ingredientsList };
       };
 
       const stepMark = () => {
-        return { __html: rec.steps };
+        const steps = rec.steps.split("<br />");
+
+        const stepsList = steps
+          .map((item) => {
+            return `<li>
+          ${item}
+          </li>`;
+          })
+          .join("");
+
+        return { __html: stepsList };
       };
 
       const nottingMark = () => {
@@ -54,15 +76,11 @@ function Recipe() {
       };
 
       return (
-        <Container>
-          <ul>
+        <Container className="row">
+          <ul className="column">
             <li>
               <h2 className="textColor">Title</h2>
               <p className="textSubtle">{rec.title}</p>
-            </li>
-            <li>
-              <h2 className="textColor">Picture</h2>
-              <img src={`${rec.picture}.jpg`} />
             </li>
             <li>
               <h2 className="textColor">Description </h2>
@@ -76,6 +94,29 @@ function Recipe() {
               ></div>
             </li>
             <li>
+              <h2 className="textColor">Ingredients</h2>
+              <ul
+                className="textSubtle"
+                dangerouslySetInnerHTML={ingMark()}
+              ></ul>
+            </li>
+            <li>
+              <h2 className="textColor">Steps</h2>
+              <ol
+                className="textSubtle"
+                dangerouslySetInnerHTML={stepMark()}
+              ></ol>
+            </li>
+          </ul>
+          <ul className="column">
+            <li className="img-container">
+              <h2 className="textColor">Picture</h2>
+              <img
+                className="img-fluid image-resize"
+                src={`${rec.picture}.jpg`}
+              />
+            </li>
+            <li>
               <h2 className="textColor">Time</h2>
               <div
                 className="textSubtle"
@@ -85,20 +126,6 @@ function Recipe() {
             <li>
               <h2 className="textColor">Yield</h2>
               <p className="textSubtle">{rec.yields}</p>
-            </li>
-            <li>
-              <h2 className="textColor">Ingredients</h2>
-              <div
-                className="textSubtle"
-                dangerouslySetInnerHTML={ingMark()}
-              ></div>
-            </li>
-            <li>
-              <h2 className="textColor">Steps</h2>
-              <div
-                className="textSubtle"
-                dangerouslySetInnerHTML={stepMark()}
-              ></div>
             </li>
             <li>
               <h2 className="textColor">Notes</h2>

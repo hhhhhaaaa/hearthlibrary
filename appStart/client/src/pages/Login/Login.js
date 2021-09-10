@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { userAuthenticated } from "../features/Authenticate/authenticateSlice";
+import { userAuthenticated } from "../../features/Authenticate/authenticateSlice";
 import { useSignIn } from "react-auth-kit";
-import auth from "../tools/auth";
+import auth from "../../tools/auth";
 import axios from "axios";
-import history from "../components/History/history";
-import Container from "../components/Container/Container";
+import history from "../../components/History/history";
+import Container from "../../components/Container/Container";
 
 /**
  *

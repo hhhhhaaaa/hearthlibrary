@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import SearchResult from "../components/SearchResult/SearchResult";
+import SearchResult from "../../components/SearchResult/SearchResult";
 import { useDispatch, useSelector } from "react-redux";
 import {
   recipeResultsFound,
   recipeResultsClear
-} from "../features/RecipeResults/recipeResultsSlice";
-import Container from "../components/Container/Container";
+} from "../../features/RecipeResults/recipeResultsSlice";
+import Container from "../../components/Container/Container";
 import axios from "axios";
 let recipeArray = [];
 
