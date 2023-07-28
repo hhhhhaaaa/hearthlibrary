@@ -95,7 +95,7 @@ A view of the dashboard:
 ## Resources
 
 *  [Bootstrap](https://getbootstrap.com/)
-*  [Express.js](https://expressjs.com/)
+*  [Express.js](https://expressjs.com/)c
 *  [ReactJS Documentation](https://facebook.github.io/react/)
 *  [MongoDB Website](https://www.mongodb.com/)
 
